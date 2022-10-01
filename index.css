@@ -1,46 +1,80 @@
-:root {
-    --background: red;
-    --title-bar: gray;
-    --title-bar-hover: lightGreen;
-
-    --link: white;
-    --link-hover: lightBlue;
-}
-
 body {
     background-color: var(--background);
+    color: var(--text);
+
+    font-family: 'Montserrat';
 }
 
-/* TITLE BAR */
-
-.title-bar {
-    background-color: var(--title-bar);
-    display: flex;
-    justify-content: center;
+/* HEADER */
+#hello-world {
+    text-align: center;
 }
 
-.title-bar ul {
-    list-style: none;
-    margin: 0%;
-    padding: 0%;
+#hello-world::before {
+    animation: hello-world 4s 2s forwards;
+    content: "|";
 }
 
-.title-bar li {
-    padding: 0px 10px 0px 10px;
-    display: inline-flex;
+@keyframes hello-world {
+    0% {
+        content: "|";
+    }
+
+    7.6% {
+        content: "H|";
+    }
+
+    15.2% {
+        content: "He|";
+    }
+
+    22.8% {
+        content: "Hel|";
+    }
+
+    30.4% {
+        content: "Hell|";
+    }
+
+    38% {
+        content: "Hello|";
+    }
+
+    45.6% {
+        content: "Hello,|";
+    }
+
+    53.2% {
+        content: "Hello, |";
+    }
+
+    60.8% {
+        content: "Hello, W|";
+    }
+
+    68.4% {
+        content: "Hello, Wo|";
+    }
+
+    76% {
+        content: "Hello, Wor|";
+    }
+
+    83.6% {
+        content: "Hello, Worl|";
+    }
+
+    91.2% {
+        content: "Hello, World|";
+    }
+
+    100% {
+        content: "Hello, World!";
+    }
 }
 
-.title-bar li:hover {
-    background-color: var(--title-bar-hover);
-}
-
-.title-bar a {
-    color: var(--link);
-    text-decoration: none;
-}
-
-/* BODY */
 h1 {
+    text-align: center;
     margin: 0px;
 }
 
@@ -48,19 +82,54 @@ h2 {
     margin: 0px;
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    margin: auto;
+
+    border: 2px dashed var(--border);
+    background-color: var(--border-background);
+}
+
+.header th {
+    padding: 0 10px;
+}
+
 #portrait {
-    border: 2px dashed white;
-    border-radius: 50%;
-    width: 100px;
+    border: 2px dashed var(--border);
+    border-radius: 25%;
+    width: 75px;
     background-color: var(--title-bar);
 }
 
-p {
-    
+/* BODY */
+.container {
+    margin: auto;
+    border: 2px solid var(--border);
+    width: 800px;
+}
+
+.intro-text {
+    margin: auto;
+    text-align: center;
 }
 
 .skill-set ul {
     margin: 10px 0 10px 0;
     padding: 0 0 0 10px;
     list-style: '- ';
+}
+
+.skill-set th {
+    width: 150px;
+    height: 100px;
+    border: 2px dashed var(--border);
+
+    transition: all 0.25s;
+}
+
+.skill-set th:hover {
+    background-color: rgba(255, 255, 255, 25%);
+    content: "test";
 }
