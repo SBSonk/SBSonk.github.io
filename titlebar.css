@@ -40,7 +40,20 @@
 }
 
 /* FOOTER */
-.footer {
+.footer-container {
     background-color: var(--title-bar);
     height: 200px;
+}
+
+.footer {
+    margin: auto;
+    position: relative;
+    right: 250px;
+
+    width: 300px;
+    border: 5px dotted green;
+}
+
+.logos img {
+    width: 20px;
 }
