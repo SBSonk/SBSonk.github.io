@@ -52,7 +52,6 @@ body {
 
 .nav-bar li {
     padding: 10px 0 10px;
-    
 }
 
 .not-last {
@@ -67,6 +66,41 @@ body {
 
     color: var(--link);
     text-decoration: none;
+}
+
+@media only screen and (min-width: 1025px) {
+    .nav-bar {
+        padding: 10px 0 10px 0;
+    }
+
+    #nav-toggle {
+        display: none;
+    }
+
+    #nav-links {
+        right: 0px;
+        padding: 0;
+
+        margin: auto;
+    }
+
+    .not-last {
+        border-style: none;
+    }
+
+    .nav-bar li {
+        display: inline;
+        transition: all 0.5s;
+    }
+
+    .nav-bar li:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .nav-bar a {
+        font-size: 20px;
+        padding: 0 15px 0 15px;
+    }
 }
 
 /* 
@@ -98,6 +132,13 @@ HEADER STYLES
 
     text-align: center;
     font-size: 30px;
+}
+
+@media only screen and (min-width: 1025px) {
+    .header {
+        margin: auto;
+        width: 100%;
+    }
 }
 
 /* CONTAINERS */
