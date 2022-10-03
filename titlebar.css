@@ -14,8 +14,6 @@
 /* TITLE BAR */
 .title-bar {
     background-color: var(--title-bar);
-    display: flex;
-    justify-content: center;
 }
 
 .title-bar ul {
@@ -37,23 +35,4 @@
 .title-bar a {
     color: var(--link);
     text-decoration: none;
-}
-
-/* FOOTER */
-.footer-container {
-    background-color: var(--title-bar);
-    height: 200px;
-}
-
-.footer {
-    margin: auto;
-    position: relative;
-    right: 250px;
-
-    width: 300px;
-    border: 5px dotted green;
-}
-
-.logos img {
-    width: 20px;
 }

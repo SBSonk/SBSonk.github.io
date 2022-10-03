@@ -1,0 +1,184 @@
+body {
+    background-color: var(--background);
+    color: var(--text);
+
+    font-family: 'Montserrat';
+}
+
+/* HEADER */
+#hello-world {
+    text-align: center;
+}
+
+#hello-world::before {
+    animation: hello-world 3.5s 1.5s forwards;
+    content: "|";
+}
+
+@keyframes hello-world {
+    0% {
+        content: "|";
+    }
+
+    7.6% {
+        content: "H|";
+    }
+
+    15.2% {
+        content: "He|";
+    }
+
+    22.8% {
+        content: "Hel|";
+    }
+
+    30.4% {
+        content: "Hell|";
+    }
+
+    38% {
+        content: "Hello|";
+    }
+
+    45.6% {
+        content: "Hello,|";
+    }
+
+    53.2% {
+        content: "Hello, |";
+    }
+
+    60.8% {
+        content: "Hello, W|";
+    }
+
+    68.4% {
+        content: "Hello, Wo|";
+    }
+
+    76% {
+        content: "Hello, Wor|";
+    }
+
+    83.6% {
+        content: "Hello, Worl|";
+    }
+
+    91.2% {
+        content: "Hello, World|";
+    }
+
+    100% {
+        content: "Hello, World!";
+    }
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    margin: 0px;
+}
+
+h2 {
+    margin: 0px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    margin: auto;
+
+    border: 2px dashed var(--border);
+    background-color: var(--border-background);
+}
+
+.header th {
+    padding: 0 10px;
+}
+
+#portrait {
+    border-radius: 10%;
+    width: 100px;
+    background-color: var(--title-bar);
+}
+
+/* Image Caroussel */
+
+.caroussel-item img {
+    display: flex;
+    margin: auto;
+    border: 2px dashed var(--border);
+    
+    width: 640px;
+    height: 360px;
+    object-fit: cover;
+}
+
+.prev-btn, .next-btn {
+    font-size: 40px;
+    background-color: red;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: green;
+}
+
+hr {
+    border-color: var(--border);
+}
+
+/* BODY */
+.container {
+    margin: auto;
+    border: 2px solid var(--border);
+    width: 800px;
+}
+
+.intro-text {
+    margin: auto;
+    text-align: center;
+}
+
+.skill-set {
+    text-align: center;
+}
+
+.skill-set table {
+    margin: auto;
+}
+
+.skill-set ul {
+    margin: 10px 0 10px 0;
+    padding: 0 0 0 10px;
+    list-style: '- ';
+}
+
+.skill-set th {
+    width: 200px;
+    height: 100px;
+    border: 2px dashed var(--border);
+
+    transition: all 0.25s;
+}
+
+.skill-set th:hover {
+    background-color: rgba(255, 255, 255, 25%);
+    content: "test";
+}
+
+th .lang span {
+    display: inline;
+}
+
+th:hover .lang {
+    display: none;
+}
+
+th .skill-lvl {
+    display: none;
+}
+
+th:hover .skill-lvl {
+    display: inline;
+}
