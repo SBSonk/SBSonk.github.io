@@ -68,6 +68,7 @@ body {
     text-decoration: none;
 }
 
+/* DESKTOP NAV-BAR */
 @media only screen and (min-width: 1025px) {
     .nav-bar {
         padding: 10px 0 10px 0;
@@ -78,6 +79,7 @@ body {
     }
 
     #nav-links {
+        display: inline;
         right: 0px;
         padding: 0;
 
@@ -119,6 +121,7 @@ HEADER STYLES
 
     text-align: center;
     font-size: 55px;
+    font-weight: bold;
 }
 
 .header2 {
@@ -132,13 +135,7 @@ HEADER STYLES
 
     text-align: center;
     font-size: 30px;
-}
-
-@media only screen and (min-width: 1025px) {
-    .header {
-        margin: auto;
-        width: 100%;
-    }
+    font-weight: bold;
 }
 
 /* CONTAINERS */
@@ -234,6 +231,19 @@ HEADER STYLES
     border: 2px solid var(--purple);
 }
 
+/* Testimonials */
+.testimonial {
+    padding-bottom: 10px;
+}
+
+.testimonial hr {
+    margin: 0;
+}
+
+.testimonial p {
+    padding: 10px 0 10px;
+    background-color: var(--link-hover);
+}
 
 /* Languages */
 .lang-container {
@@ -251,6 +261,23 @@ HEADER STYLES
 
 .lang-logo {
     width: 90px;
+}
+
+@media only screen and (min-width: 1025px) {
+    .lang-container {
+        display: flex;
+        margin: auto;
+    }
+
+    .lang-table {
+        width: 40%;
+        transition: all 0.25s;
+        display: inline-block;
+    }
+
+    .lang-table:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+    }
 }
 
 /* FOOTER */
