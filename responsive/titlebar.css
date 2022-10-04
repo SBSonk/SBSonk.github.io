@@ -2,7 +2,7 @@
     --background: #1a1a1a;
     --title-bar: #8936b3;
     --header: teal;
-    --header2: #b3b336;
+    --header2: #eeee46;
     --container: rgb(255, 255, 255);
     --container-text: black;
 
@@ -12,7 +12,7 @@
     --text: white;
     --purple: purple;
     --pink: #ff4dff;
-    --yellow: #ffff4d;
+    --yellow: #b3b336;
 }
 
 body {
@@ -137,6 +137,7 @@ HEADER STYLES
     text-align: center;
     font-size: 30px;
     font-weight: bold;
+    color: black;
 }
 
 /* CONTAINERS */
@@ -251,6 +252,10 @@ HEADER STYLES
     padding: 15px 0 15px 0;
 }
 
+.lang-table p {
+    color: black;
+}
+
 .lang-table {
     margin: 10px auto 10px auto;
     width: 95%;
@@ -327,6 +332,10 @@ HEADER STYLES
     padding: 10px 0 10px;
 }
 
+.project-desc {
+    padding: 10px 0 15px
+}
+
 .projects-container ul {
    width: 90%;
    margin: 0 auto 0 auto;
@@ -337,11 +346,30 @@ HEADER STYLES
     list-style-type: none;
     margin: 15px 0 15px;
 
-    border: 1px dashed red
+    border: 2px solid var(--purple);
 }
 
 .project-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
+}
+
+/* Fixes container header nesting issues */
+.container .header p {
+    color: white;
+    font-size: 40px;
+}
+
+/* Change projects layout to horizontal */
+@media only screen and (min-width: 1025px) {
+    .projects-container li {
+        width: 30%;
+        display: inline-block;
+        margin-left: 25px;
+    }
+    
+    .projects-container ul {
+        width: 100%;
+    }
 }
