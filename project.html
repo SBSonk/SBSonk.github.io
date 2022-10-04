@@ -3,22 +3,101 @@
 <html lang="en">
     <head>
         <link href="titlebar.css" rel="stylesheet">
-        <link rel="stylesheet" href="index.css">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-        <title>Projects</title>
+
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>SBSonk Website</title>
     </head>
+
     <body>
-        <div class="title-bar">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="testimonial.html">Testimonials</a></li>
-				<li><a href="project.html">Projects</a></li>
-				<li><a href="contact.html">Contact Me</a></li>
+        <div class="nav-bar">
+            <a onclick="toggleNavBar();" id="nav-toggle">☰</a>
+			<ul id="nav-links">
+				<li class="not-last"><a href="index.html">Home</a></li>
+				<li class="not-last"><a href="project.html">Projects</a></li>
+                <li><a href="Contact Me.html">Contact Me</a></li>
 			</ul>
         </div>
+        
+        <div class="header">
+            <p>Previous Projects</p>
+        </div>
 
-        <h1>Projects</h1>
+        <div class="container">
+            <p id="projects-intro">Listed below are some of my previous personal projects aswell as what I used to create them.</p>
 
+            <div class="header"><p>Games</p></div>
+            <div class="projects-container">
+                <ul>
+                    <li><div class="project">
+                        <div class="header2"><p>Keep Going</p></div>
+                        <img src="images/mekaku.jpg" class="project-image">
+                        <p class="project-desc">descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.</p>
+                        <div class="header"><p>downloads</p></div>
+
+                        <div class="project-access">
+                            <p>img LINK</p>
+                        </div>
+                    </div></li>
+
+                    <li><div class="project">
+                        <div class="header2"><p>Risk of Fail</p></div>
+                        <img src="images/mekaku.jpg" class="project-image">
+                        <p class="project-desc">descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.</p>
+                        <div class="header"><p>downloads</p></div>
+
+                        <div class="project-access">
+                            <p>img LINK</p>
+                        </div>
+                    </div></li>
+
+                    <li><div class="project">
+                        <div class="header2"><p>Risk of Fail</p></div>
+                        <img src="images/mekaku.jpg" class="project-image">
+                        <p class="project-desc">descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.</p>
+                        <div class="header"><p>downloads</p></div>
+
+                        <div class="project-access">
+                            <p>img LINK</p>
+                        </div>
+                    </div></li>
+                </ul>
+            </div>
+
+            <div class="header"><p>Others</p></div>
+            <div class="projects-container">
+                <ul>
+                    <li><div class="project">
+                        <div class="header2"><p>Portfolio Website</p></div>
+                        <img src="images/mekaku.jpg" class="project-image">
+                        <p class="project-desc">descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.descriptions here.</p>
+                    </div></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="header" id="footer">
+            <h1>Contact me here:</h1>       
+            <div id="footer-links">
+                <table>
+                    <tr class="footer-link">
+                        <th><img src="images/gmail.png"></th>
+                        <th>sg.buenaventura04@gmail.com</th>
+                    </tr>
+                    <tr class="footer-link">
+                        <th><img src="images/disc.png"></th>
+                        <th>sonk#1302</th>
+                    </tr>
+                    <tr class="footer-link">
+                        <th><img src="images/github.png"></th>
+                        <th>SBSonk</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <script src="navbar.js"></script>
     </body>
 </html>

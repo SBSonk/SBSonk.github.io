@@ -74,6 +74,7 @@ body {
 }
 
 h1 {
+    font-size: 50px;
     text-align: center;
     margin: 0px;
 }
@@ -85,7 +86,7 @@ h2 {
 .header {
     display: flex;
     justify-content: center;
-    width: 600px;
+    width: 800px;
     margin: auto;
 
     border: 2px dashed var(--border);
@@ -97,16 +98,30 @@ h2 {
 }
 
 #portrait {
-    border: 2px dashed var(--border);
-    border-radius: 25%;
-    width: 75px;
+    border-radius: 10%;
+    width: 100px;
     background-color: var(--title-bar);
 }
 
-#caroussel {
+/* Image Caroussel */
+
+.caroussel-item img {
     display: flex;
     margin: auto;
-    border: 5px dotted green;
+    border: 2px dashed var(--border);
+    
+    width: 640px;
+    height: 360px;
+    object-fit: cover;
+}
+
+.prev-btn, .next-btn {
+    font-size: 40px;
+    background-color: red;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: green;
 }
 
 hr {
