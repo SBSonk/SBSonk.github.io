@@ -1,38 +1,375 @@
 :root {
-    --background: black;
-    --title-bar: gray;
-    --title-bar-hover: lightGreen;
+    --background: #1a1a1a;
+    --title-bar: #8936b3;
+    --header: teal;
+    --header2: #eeee46;
+    --container: rgb(255, 255, 255);
+    --container-text: black;
 
     --link: white;
     --link-hover: lightBlue;
 
     --text: white;
-    --border: purple;
-    --border-background: rgb(186, 112, 255);
+    --purple: purple;
+    --pink: #ff4dff;
+    --yellow: #b3b336;
 }
 
-/* TITLE BAR */
-.title-bar {
+body {
+    background-color: var(--background);
+    color: var(--text);
+
+    font-family: 'Montserrat';
+    font-size: 20px;
+}
+
+/* NAV BAR */
+#nav-toggle {
+    color: var(--link);
+    position: relative;
+    font-size: 50px;
+    bottom: 3px;
+    left: 5px;
+}
+
+#nav-links {
+    padding: 50px 0 0 0;
+    margin: 10px 0 10px 0;
+    position: relative;
+    right: 35px;
+    
+    display: none;
+}
+
+.nav-bar {
     background-color: var(--title-bar);
+    display: flex;
 }
 
-.title-bar ul {
+.nav-bar ul {
     list-style: none;
-    margin: 0%;
-    padding: 0%;
 }
 
-.title-bar li {
-    padding: 10px 15px 10px 15px;
-    display: inline-flex;
+.nav-bar li {
+    padding: 10px 0 10px;
+}
+
+.not-last {
+    border-width: 0 0 3px 0;
+    border-style: solid;
+    border-color: var(--link);
+}
+
+.nav-bar a {
+    font-family: "Montserrat";
+    font-size: 40px;
+
+    color: var(--link);
+    text-decoration: none;
+}
+
+/* DESKTOP NAV-BAR */
+@media only screen and (min-width: 1025px) {
+    .nav-bar {
+        padding: 10px 0 10px 0;
+    }
+
+    #nav-toggle {
+        display: none;
+    }
+
+    #nav-links {
+        display: inline;
+        right: 0px;
+        padding: 0;
+
+        margin: auto;
+    }
+
+    .not-last {
+        border-style: none;
+    }
+
+    .nav-bar li {
+        display: inline;
+        transition: all 0.5s;
+    }
+
+    .nav-bar li:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .nav-bar a {
+        font-size: 20px;
+        padding: 0 15px 0 15px;
+    }
+}
+
+/* 
+HEADER STYLES
+.header
+.header2
+*/
+
+.header {
+    background-color: var(--header);
+    height: auto;
+    padding: 15px 0 15px 0
+}
+
+.header p {
+    margin: 0px;
+
+    text-align: center;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.header2 {
+    background-color: var(--header2);
+    height: auto;
+    padding: 15px 0 15px 0;
+}
+
+.header2 p {
+    margin: 0px;
+
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+/* CONTAINERS */
+.container {
+    background-color: var(--container);
+}
+
+.container p {
+    margin: 0;
+    text-align: center;
+    color: var(--container-text);
+}
+
+/* Hello World Animation */
+#hello-world::before {
+    animation: hello-world 3.5s 1.5s forwards;
+    content: "|";
+}
+
+@keyframes hello-world {
+    0% {
+        content: "|";
+    }
+
+    7.6% {
+        content: "H|";
+    }
+
+    15.2% {
+        content: "He|";
+    }
+
+    22.8% {
+        content: "Hel|";
+    }
+
+    30.4% {
+        content: "Hell|";
+    }
+
+    38% {
+        content: "Hello|";
+    }
+
+    45.6% {
+        content: "Hello,|";
+    }
+
+    53.2% {
+        content: "Hello, |";
+    }
+
+    60.8% {
+        content: "Hello, W|";
+    }
+
+    68.4% {
+        content: "Hello, Wo|";
+    }
+
+    76% {
+        content: "Hello, Wor|";
+    }
+
+    83.6% {
+        content: "Hello, Worl|";
+    }
+
+    91.2% {
+        content: "Hello, World";
+    }
+
+    100% {
+        content: "Hello, World!";
+    }
+}
+
+/* Self Intro */
+.self-intro-text {
+    padding: 10px 5px 10px 5px;
+}
+
+#intro-img {
+    display: flex;
+    margin: 10px 5px 10px 5px;
+}
+
+#intro-img img {
+    width: 80%;
+    object-fit: fill;
+
+    padding: 10px 0 10px 0;
+    border: 2px solid var(--purple);
+}
+
+/* Testimonials */
+.testimonial {
+    padding-bottom: 10px;
+}
+
+.testimonial hr {
+    margin: 0;
+}
+
+.testimonial p {
+    padding: 10px 0 10px;
+    background-color: var(--link-hover);
+}
+
+/* Languages */
+.lang-container {
+    padding: 15px 0 15px 0;
+}
+
+.lang-table {
+    margin: 10px auto 10px auto;
+    width: 95%;
+    border: 2px dashed var(--purple);
+
+    padding: 5px;
     transition: all 0.25s;
 }
 
-.title-bar li:hover {
-    background-color: var(--title-bar-hover);
+.lang-table:hover {
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
-.title-bar a {
-    color: var(--link);
-    text-decoration: none;
+.lang-logo {
+    width: 90px;
+}
+
+.skill-lvl {
+    color: black;
+}
+
+@media only screen and (min-width: 1025px) {
+    .lang-container {
+        display: flex;
+        margin: auto;
+    }
+
+    .lang-table {
+        width: 40%;
+        display: inline-block;
+    }
+}
+
+/* FOOTER */
+#footer {
+    padding: 15px 0 15px 0;
+}
+
+#footer h1 {
+    font-size: 30px;
+    margin: 0;
+    padding: 0 0 0 15px;
+
+    position: relative;
+    right: 5px
+}
+
+#footer hr {
+    border: 2px dashed var(--purple);
+}
+
+#footer-links {
+    padding-top: 10px;
+}
+
+#footer-links img {
+    width: 30px;
+    padding-right: 10px;
+}
+
+#footer-links th {
+
+    font-size: 15px;
+}
+
+.footer-link {
+    text-align: left;
+    position: relative;
+    left: 10px
+}
+
+/* PROJECTS */
+#projects-intro {
+    padding: 15px 0 15px 0;
+}
+
+.projects-container {
+    padding: 10px 0 10px;
+}
+
+.project-desc {
+    padding: 10px 0 15px
+}
+
+.projects-container ul {
+   width: 90%;
+   margin: 0 auto 0 auto;
+   padding: 0;
+}
+
+.projects-container li {
+    list-style-type: none;
+    margin: 15px 0 15px;
+
+    border: 2px solid var(--purple);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Fixes container header nesting issues */
+.container .header p {
+    color: white;
+    font-size: 40px;
+}
+
+/* Change projects layout to horizontal */
+@media only screen and (min-width: 1025px) {
+    .projects-container li {
+        width: 30%;
+        display: inline-block;
+        margin-left: 25px;
+    }
+    
+    .projects-container ul {
+        width: 100%;
+    }
 }
