@@ -11,7 +11,8 @@
 
     --text: white;
     --purple: purple;
-    --pink: #ff4dff;
+    --pink: rgba(247, 141, 247, 0.25);
+    --pink-hover: rgba(247, 141, 247, 0.5);
     --yellow: #b3b336;
 }
 
@@ -27,18 +28,18 @@ body {
 #nav-toggle {
     color: var(--link);
     position: relative;
-    font-size: 50px;
+    font-size: 40px;
     bottom: 3px;
-    left: 5px;
+    left: 10px;
 }
 
 #nav-links {
-    padding: 50px 0 0 0;
-    margin: 10px 0 10px 0;
+    padding: 45px 0 0 0;
+    margin: 0px 0 10px 0;
     position: relative;
-    right: 35px;
+    right: 25px;
     
-    display: none;
+    display: none; /* SET TO NONE */
 }
 
 .nav-bar {
@@ -51,7 +52,7 @@ body {
 }
 
 .nav-bar li {
-    padding: 10px 0 10px;
+    padding: 5px 0 5px;
 }
 
 .not-last {
@@ -62,14 +63,14 @@ body {
 
 .nav-bar a {
     font-family: "Montserrat";
-    font-size: 40px;
+    font-size: 30px;
 
     color: var(--link);
     text-decoration: none;
 }
 
 /* DESKTOP NAV-BAR */
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 768px) {
     .nav-bar {
         padding: 10px 0 10px 0;
     }
@@ -221,30 +222,55 @@ HEADER STYLES
 }
 
 #intro-img {
-    display: flex;
-    margin: 10px 5px 10px 5px;
+    width: 90%;
+    margin: 10px auto 10px auto;
 }
 
 #intro-img img {
-    width: 80%;
+    height: 200px;
+    width: 100%;
     object-fit: fill;
 
     padding: 10px 0 10px 0;
     border: 2px solid var(--purple);
 }
 
+@media only screen and (min-width: 768px) {
+    #intro-img {
+        width: 95%;
+        display: flex;
+    }
+    
+    #intro-img img {
+        width: 100%;
+    }
+}
+
 /* Testimonials */
 .testimonial {
+    padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.testimonial hr {
-    margin: 0;
+.testimonial-name {
+    padding-left: 15px;
+    font-weight: bold;
 }
 
 .testimonial p {
-    padding: 10px 0 10px;
-    background-color: var(--link-hover);
+    margin: 0 10px 0 10px;
+    padding: 10px 5px 10px 5px;
+    background-color: var(--pink);
+
+    border-width: 2px;
+    border-style: dashed;
+    border-color: var(--purple);
+
+    transition: all 0.25s;
+}
+
+.testimonial p:hover {
+    background-color: var(--pink-hover);
 }
 
 /* Languages */
@@ -256,13 +282,14 @@ HEADER STYLES
     margin: 10px auto 10px auto;
     width: 95%;
     border: 2px dashed var(--purple);
+    background-color: var(--pink);
 
     padding: 5px;
     transition: all 0.25s;
 }
 
 .lang-table:hover {
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: var(--pink-hover);
 }
 
 .lang-logo {
@@ -273,7 +300,7 @@ HEADER STYLES
     color: black;
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 768px) {
     .lang-container {
         display: flex;
         margin: auto;
@@ -362,6 +389,18 @@ HEADER STYLES
 }
 
 /* Change projects layout to horizontal */
+@media only screen and (min-width: 768px) {
+    .projects-container li {
+        width: 45%;
+        display: inline-block;
+        margin-left: 25px;
+    }
+    
+    .projects-container ul {
+        width: 100%;
+    }
+}
+
 @media only screen and (min-width: 1025px) {
     .projects-container li {
         width: 30%;
