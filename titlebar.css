@@ -34,7 +34,7 @@ body {
 }
 
 #nav-links {
-    padding: 45px 0 0 0;
+    padding: 45px 10px 0 0;
     margin: 0px 0 10px 0;
     position: relative;
     right: 25px;
@@ -218,7 +218,7 @@ HEADER STYLES
 
 /* Self Intro */
 .self-intro-text {
-    padding: 10px 5px 10px 5px;
+    padding: 20px 5px 20px 5px;
 }
 
 #intro-img {
@@ -243,6 +243,7 @@ HEADER STYLES
     
     #intro-img img {
         width: 100%;
+        margin: 0 5px 0 5px;
     }
 }
 
@@ -379,13 +380,42 @@ HEADER STYLES
 .project-image {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    background-color: black;
+    object-fit: contain;
+
+    border-width: 2px 0 2px;
+    border-color: var(--purple);
+    border-style: solid;
+}
+
+.project-header-image-container {
+    width: 100%;
+    margin: auto;
+}
+
+.project-banner {
+    width: 60%;
+    padding-right: 0px;
+    margin: 0 0 0 13.75%;
+}
+
+.project-icon {
+    width: 12.5%;
+    border-radius: 10%;
 }
 
 /* Fixes container header nesting issues */
 .container .header p {
     color: white;
     font-size: 40px;
+}
+
+.container .project .header p {
+    font-size: 25px;
+}
+
+.project-access {
+    padding: 10px 0 10px;
 }
 
 /* Change projects layout to horizontal */
