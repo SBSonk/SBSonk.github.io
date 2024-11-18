@@ -23,8 +23,8 @@ nav {
 
     padding: 0 6vw 0 6vw;
 
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 5px;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -56,11 +56,6 @@ nav a {
     border-color: white;
     border-width: 1px;
     border-style: solid;
-}
-
-.navDropdownText {
-    position: relative;
-    top: 6px;
 }
 
 .roundedTopBorder {
@@ -104,8 +99,8 @@ nav span {
 }
 
 .navDropdown {
-    position: relative;
-    transform: translate(-26px, 13px);
+    position: absolute;
+    transform: translate(-26px, 5px);
     display: flex;
     flex-direction: column;
     margin: 0;
