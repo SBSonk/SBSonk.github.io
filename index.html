@@ -1,91 +1,42 @@
-<!DOCTYPE html>
+<html>
 
-<html lang="en">
-    <head>
-        <link href="titlebar.css" rel="stylesheet">
-        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<head>
+  <title>
+    Personal Website | Home
+  </title>
 
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 
-        <title>SBSonk Home</title>
-    </head>
+<body>
+  <script src="js/nav.js"></script>
 
-    <body>
-        <div class="nav-bar">
-            <a onclick="toggleNavBar();" id="nav-toggle">☰</a>
-			<ul id="nav-links">
-				<li class="not-last"><a href="index.html">Home</a></li>
-				<li class="not-last"><a href="project.html">Projects</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-			</ul>
-        </div>
-        
-        <div class="header" id="hello-world-h">
-            <p id="hello-world"></p>
-        </div>
+  <nav>
+    <a href="index.html" class="navHome"><img src="images/icon.png" class="navIcon"></a>
 
-        <div class="header2" id="name">
-            <p>Stanley Buenaventura</p>
-        </div>
+    <ul>
+      <li class="roundedBorder navButton"><a href="index.html"><span>Home</span></a></li>
+      <li class="roundedBorder navButton"><a href="about.html"><span>About</span></a></li>
+      <li onmouseenter="showNavDropdown()" onmouseleave="hideNavDropdown()" class="roundedBorder navButton" id="navDropdown">
+        <span class="navDropdownText">Resume</span>
+        <ul class="navDropdown hidden" id="navResumeHover">
+          <li><a href="portfolio.html"><span>Work History</span></a></li>
+          <li><a href="portfolio.html"><span>Portfolio</span></a></li>
+          <li><a href="portfolio.html"><span>Gallery</span></a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
-        <div class="container">
-            <p class="self-intro-text">Self taught programmer with a passion for game development.</p>
-            
-            <div class="header2"><p>About Me</p></div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
 
-            <p class="self-intro-text">I started programming early on using Game Maker Studio, I switched over to Unity and one thing led to another and I have been working on expanding my skill set ever since.</p> 
-            
-            <div class="testimonial">
-                <p>
-                    "Stanley is an excellent programmer not only experience wise but in how he teaches others his wisdom, I am personally thankful for him in helping me in my endeavors." <span class="testimonial-name">~ Richmond</span>
-                </p>
-            </div>
-        </div>
-        
-        <div class="header2" id="lang">
-            <p>Languages I'm most comfortable with:</p>
-        </div>
+  <div class="block">
+    <ul class="twoSplit">
+      <li>Test</li>
+      <li>Test</li>
+    </ul>
+  </div>
+</body>
 
-        <div class="container lang-container">
-            <div class="lang-table">
-                <table>
-                    <tr>
-                        <th><img src="images/cs.png" class="lang-logo"></th>
-                        <th><span class="skill-lvl">A lot of experience with game development with the Unity game engine.</span></th>
-                    </tr>
-                </table>
-            </div>
-            <div class="lang-table">
-                <table>
-                    <tr>
-                        <th><img src="images/py.png" class="lang-logo"></th>
-                        <th><span class="skill-lvl">Previously built a discord bot using the discord.py framework.</span></th>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <div class="header" id="footer">
-            <h1>Contact me here:</h1>       
-            <div id="footer-links">
-                <table>
-                    <tr class="footer-link">
-                        <th><img src="images/gmail.png"></th>
-                        <th>sg.buenaventura04@gmail.com</th>
-                    </tr>
-                    <tr class="footer-link">
-                        <th><img src="images/disc.png"></th>
-                        <th>sonk#1302</th>
-                    </tr>
-                    <tr class="footer-link">
-                        <th><img src="images/github.png"></th>
-                        <th>SBSonk</th>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <script src="navbar.js"></script>
-    </body>
 </html>
