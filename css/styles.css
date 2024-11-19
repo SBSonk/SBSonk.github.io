@@ -1,30 +1,28 @@
 :root {
-    --lightA: #D8D8F6;
+    --lightA: #eaeaff;
     --lightB: #B18fcf;
     --midtone: #9984D4;
     --darkA: #494850;
     --darkB: #2C2C34;
-    --darkC: #3f3f51;
-    --textA: white;
+    --darkC: #fef4ff;
+    --textA: rgb(131, 131, 131);
     --textB: rgb(225, 225, 225);
 }
 
 body {
-    background-color: var(--darkC);
+    background-image: url("/images/background.png");
 }
 
 nav {
-    background-color: var(--darkB);
+    background-color: rgb(0, 0, 0, 0.1);
     width: 100%;
-    height: 5%;
+    height: 5.5vh;
 
     position: fixed;
     display: flex;
 
-    padding: 0 6vw 0 6vw;
+    padding: 5px 6vw 5px 6vw;
 
-    padding-top: 20px;
-    padding-bottom: 5px;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -158,7 +156,6 @@ a span:hover {
 }
 
 .block {
-    background-color: var(--darkA);
     min-height: 60vh;
     width: 85vw;
     margin: 15px auto 15px auto;
@@ -168,6 +165,10 @@ a span:hover {
     font-size: normal;
     font-family: "Helvetica";
     color: var(--textA);
+}
+
+.inline {
+    display: inline-flex;
 }
 
 .twoSplit {
@@ -185,4 +186,45 @@ a span:hover {
 
 .twoSplit li {
     margin: 0 auto 0 auto;
+}
+
+.verticalList {
+    width: 20px;
+}
+
+.verticalLine {
+    margin: 0 auto 0 auto;
+    background-color: var(--textA);
+    width: 2px;
+    height: 50px;
+}
+
+.verticalList ul {
+    height: 200px;
+    width: max-content;
+    list-style-type: none;
+    font-size: large;
+    transform-origin: middle;
+    position: relative;
+    right: .35rem;
+    transform: rotate(-90deg);
+
+    padding: 0;
+}
+
+.verticalList li {
+    display: inline;
+}
+
+.nameTag {
+    
+}
+
+.center {
+    margin: auto;
+}
+
+.fit {
+    width: max-content;
+    height: max-content;
 }
