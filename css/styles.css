@@ -1,59 +1,67 @@
 :root {
-    --lightA: #eaeaff;
+    --lightA: #e4d8ff;
     --lightB: #B18fcf;
     --midtone: #9984D4;
     --darkA: #494850;
     --darkB: #2C2C34;
     --darkC: #fef4ff;
-    --textA: rgb(131, 131, 131);
-    --textB: rgb(225, 225, 225);
+    --textA: #24292f;
+    --textB: #401268;
+    --textC: #494850;
 }
 
 body {
     background-image: url("/images/background.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
 }
 
 nav {
-    background-color: rgb(0, 0, 0, 0.1);
-    width: 100%;
-    height: 5.5vh;
+    width: 80vw;
+    height: fit-content;
 
-    position: fixed;
+    position: relative;
     display: flex;
+    justify-content: center;
 
-    padding: 5px 6vw 5px 6vw;
+    margin: 80px auto 0 auto;
+    padding: 5px;
+    z-index: 10;
 
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+    flex-direction: column;
+    align-items: center;
 }
 
 nav ul {
-    height: calc(5vh);
+    width: fit-content;
 
-    padding: 0;
-
-    margin: auto auto auto 0;
+    margin: auto 0 auto 0;
     list-style-type: none;
 
     display: inline-flex;
+
+    padding: 0;
 }
 
+
 nav a {
-    margin: inherit;
+    margin: 0;
+    text-decoration: none;
 }
 
 .navButton {
     width: 75px;
     height: 80%;
-    padding: 0 25px 0 25px;
-    margin: auto 10px auto 10px;
+    padding: 0 10px 0 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: auto auto auto auto;
     align-content: center;
     text-align: center;
 
     transition: all .25s;
-
-    border-color: white;
-    border-width: 1px;
-    border-style: solid;
 }
 
 .roundedTopBorder {
@@ -64,63 +72,68 @@ nav a {
     border-radius: 5px;
 }
 
-nav li:hover {
-    background-color: var(--midtone);   
-    border-color: var(--midtone);
-}
-
-nav a {
-    text-decoration: none;
-}
-
 nav span {
     font-size: large;
-    text-transform: uppercase;
-    font-family: "Trebuchet MS";
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     color: var(--textA);
+
+    transition: all .25s;
+}
+
+nav span:hover {
+    color: var(--textB);
 }
 
 .navHome {
-    margin: auto 15px auto 15px;
+    margin: 0;
 }
 
 .navIcon {
-    width: 4vh;
-    height: 4vh;
+    width: 43.2px;
+    height: 43.2px;
     object-fit: contain;
+
+    transition: all .25s; 
+    filter: grayscale(1);
+}
+
+.navIcon:hover {
+    transform: scale(1.25);
+    filter: grayscale(0);
 }
 
 @keyframes dropdownShow {
-    0% {opacity: 0%;}
+    0% {
+        opacity: 0%;
+        transform: scaleY(0);
+    }
 
-    100% {opacity: 100%;}
+    100% {
+        opacity: 100%;
+        transform: scaleY(1);
+    }
 }
 
 .navDropdown {
+    transform-origin: top;
     position: absolute;
-    transform: translate(-26px, 5px);
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 10px 30px 10px 30px;
+    padding: 5px 10px 5px 10px;
 
     width: 130px;
     height: fit-content;
 
     text-align: left;
 
-    background-color: var(--midtone);
-    border-color: var(--midtone);
-    border-width: 1px;
-    border-style: solid;
-
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
-
     pointer-events: all;
 
     border-radius: 0 5px 5px 5px;
 
     transition: all .25s;
+    transform: translate(-8px, 0) scaleY(1);
 }
 
 .navDropdown:hover {
@@ -133,8 +146,11 @@ nav span {
 }
 
 .navDropdown span {
-    font-family: "Trebuchet MS";
-    font-size: medium;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: large;
+
+    text-transform: lowercase;
 }
 
 a span {
@@ -149,6 +165,7 @@ a span:hover {
 .hidden {
     opacity: 0%;
     pointer-events: none;
+    transform: translate(-8px, 0) scaleY(0);
 }
 
 .spacer {
@@ -156,16 +173,38 @@ a span:hover {
 }
 
 .block {
-    min-height: 60vh;
+    height: fit-content;
     width: 85vw;
     margin: 15px auto 15px auto;
 
     border-radius: 25px;
 
     font-size: normal;
-    font-family: "Helvetica";
+    font-family: "Funnel Sans", sans-serif;
     color: var(--textA);
 }
+
+.blockRibbon {
+    height: fit-content;
+    margin: 15px auto 15px auto;
+    padding: 20px;
+
+    font-size: normal;
+    font-family: "Funnel Sans", sans-serif;
+    color: var(--textA);
+
+    background: url("/images/paper-texture.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    box-shadow: 0px 10px 15px 5px rgb(0, 0, 0, 0.2);
+}
+
+.blockRibbon h1 {
+    font-size: 50px;
+    text-shadow: rgb(22, 22, 22, .1) 3px 3px 3px;
+}
+
 
 .inline {
     display: inline-flex;
@@ -188,36 +227,90 @@ a span:hover {
     margin: 0 auto 0 auto;
 }
 
-.verticalList {
-    width: 20px;
-}
-
 .verticalLine {
-    margin: 0 auto 0 auto;
     background-color: var(--textA);
     width: 2px;
-    height: 50px;
+    height: 75px;
+
+    margin: 20px auto 20px auto;
 }
 
-.verticalList ul {
-    height: 200px;
-    width: max-content;
+.verticalList {
+    height: fit-content;
+    width: 30px;
     list-style-type: none;
     font-size: large;
-    transform-origin: middle;
-    position: relative;
-    right: .35rem;
-    transform: rotate(-90deg);
 
     padding: 0;
 }
 
+.verticalText {
+    writing-mode: sideways-lr;
+    position: relative;
+    right: 2.3rem;
+    height: max-content;
+}
+
 .verticalList li {
-    display: inline;
+    width: 30px;
+    display: inline-block;
+
+    margin: 5px 0 5px;
+    text-align: center;
+}
+
+.verticalImage img {
+    width: 25px;
+    object-fit: contain;
+    position: relative;
+    filter: grayscale(1);
+
+    transition: all .25s;
+}
+
+.verticalImage img:hover {
+    transform: scale(1.25);
+    filter: grayscale(0);
+}
+
+.rotateList {
+    height: max-content;
+    margin: 0;
+    align-content: center;
 }
 
 .nameTag {
+    position: relative;
+    margin-inline: auto;
+    width: 850px;
+
+    color: var(--textA);
+    text-shadow: rgb(22, 22, 22, .1) 3px 3px 3px;
     
+    word-spacing: 0px;
+    color: var(--textA);
+    font-size: 35px;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: lowercase;
+
+    transform-origin: center;
+}
+
+.nameTag ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.nameTag li {
+    padding: 10px 0 10px;
+}
+
+.nameTag h1, h2 {
+    margin: 0 auto 0 auto;
+    padding: 0;
 }
 
 .center {
@@ -227,4 +320,150 @@ a span:hover {
 .fit {
     width: max-content;
     height: max-content;
+}
+
+.maxWidth {
+    width: 100%;
+}
+
+.inlineFlex {
+    display: inline-flex;
+}
+
+.footer-line {
+    width: 100%;
+    height: 10px;
+
+    background-color: var(--darkA);
+    box-shadow: 0px 0px 10px 5px var(--darkA);
+    position: relative;
+    z-index: -10;
+}
+
+footer {
+    margin-top: 200px;
+    height: 200px;
+    background-color: var(--darkB);
+}
+
+footer .block {
+    position: relative;
+    z-index: 10;
+}
+
+footer p {
+    color: var(--lightA);
+}
+
+.footer-icon img {
+    width: 40px;
+    object-fit: contain;
+    position: relative;
+
+    transition: all .25s;
+}
+
+.footer-icon img:hover {
+    transform: scale(1.25);
+}
+
+.footer-sites {
+    display: flex;
+    margin: auto;
+    width: 40%;
+}
+
+.footer-site-line {
+    height: 2px;
+    width: 5vw;
+    background-color: white;
+}
+
+.footer-sites li {
+    margin: auto;
+    list-style: none;
+}
+
+.nav-resume-dl {
+    padding: 8px 10px 8px 10px;
+    border: var(--textA);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 25px;
+    display: flex;
+
+    height: fit-content;
+
+    transition: all .25s;
+
+    position: absolute;
+
+    right: 0;
+    bottom: 20%;
+}
+
+.nav-resume-dl:hover {
+    background-color: var(--textB);
+    border-color: var(--textB);
+}
+
+.nav-resume-dl span {
+    padding: 0 5px 0 5px;
+    color: var(--textA);
+}
+
+.nav-resume-dl:hover {
+    border-color: var(--textB);
+    color: white;
+}
+
+.nav-resume-dl:hover span {
+    color: white;
+}
+
+.resume-icon {
+    opacity: 1;
+    z-index: 13;
+    filter: grayscale(1);
+
+    transition: all .25s;
+}
+
+.nav-resume-dl:hover .resume-icon {
+    z-index: 13;
+    opacity: 0;
+
+    transition: all .25s;
+}
+
+.nav-resume-dl:hover .resume-icon-white {
+    z-index: 13;
+    opacity: 1;
+}
+
+.resume-icon-white {
+    position: absolute;
+    right: 5%;
+    z-index: 12;
+}
+
+.nav-resume-link, .nav-resume-link:visited {
+    color: var(--textA);
+}
+
+.resume-icon {
+    padding: 0 5px 0 5px;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+
+    transition: all .25s; 
+    filter: grayscale(1);
+}
+
+#about-bio {
+    margin: 10px auto 10px auto;
+    color: var(--textC);
+    width: 50%;
+    text-align: center;
 }

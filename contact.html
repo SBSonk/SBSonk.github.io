@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <title>
+    Personal Website | Home
+  </title>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <script src="js/nav.js"></script>
+
+  <nav>
+    <a href="index.html" class="navHome"><img src="images/icon.png" class="navIcon"></a>
+
+    <ul>
+      <li class="roundedBorder navButton"><a href="index.html"><span>Home</span></a></li>
+      <li class="roundedBorder navButton"><a href="contact.html"><span>Contact</span></a></li>
+      <li onmouseenter="showNavDropdown()" onmouseleave="hideNavDropdown()" class="roundedBorder navButton" id="navDropdown">
+        <span>Resume</span>
+        <ul class="navDropdown hidden" id="navResumeHover">
+          <li><a href="portfolio.html"><span>Work History</span></a></li>
+          <li><a href="portfolio.html"><span>Portfolio</span></a></li>
+          <li><a href="portfolio.html"><span>Gallery</span></a></li>
+        </ul>
+      </li>
+      
+    </ul>
+  </nav>
+
+  <div class="spacer"></div>
+  <div class="spacer"></div>  
+
+  <div class="block">
+    <h1 class="center fit">Contact me!</h1>
+
+    <form action="https://formsubmit.co/fb52d2b54c32402ecbafb126e8f67b55" method="POST" class="center fit">
+        Your Name: <input type="text" name="name" required> <br>
+        Your Email: <input type="email" name="email" required> <br>
+        Your Message: <input type="text" name="message" required> <br>
+        <button type="submit">Send</button>
+   </form> 
+  </div>
+
+  <div class="spacer"></div>  
+
+  <footer class="block">
+    <p>© 2024 Stanley C. Buenaventura. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
