@@ -1,14 +1,14 @@
-:root {
-    --lightA: #e4d8ff;
-    --lightB: #B18fcf;
-    --midtone: #9984D4;
-    --darkA: #494850;
-    --darkB: #2C2C34;
-    --darkC: #fef4ff;
-    --textA: #24292f;
-    --textB: #401268;
-    --textC: #494850;
-}
+$lightA: #e4d8ff;
+$lightB: #B18fcf;
+$midtone: #9984D4;
+$darkA: #494850;
+$darkB: #2C2C34;
+$darkC: #fef4ff;
+$darkD: #f4f4f4;
+$textA: #24292f;
+$textB: #401268;
+$textC: #494850;
+$textD: #6b6777;
 
 body {
     background-image: url("/images/background.png");
@@ -60,6 +60,7 @@ nav a {
     margin: auto auto auto auto;
     align-content: center;
     text-align: center;
+    text-shadow: rgb(22, 22, 22, .1) 3px 3px 3px;
 
     transition: all .25s;
 }
@@ -76,13 +77,13 @@ nav span {
     font-size: large;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    color: var(--textA);
+    color: $textA;
 
     transition: all .25s;
 }
 
 nav span:hover {
-    color: var(--textB);
+    color: $textB;
 }
 
 .navHome {
@@ -159,7 +160,7 @@ a span {
 }
 
 a span:hover {
-    color: var(--textB);
+    color: $textB;
 }
 
 .hidden {
@@ -181,17 +182,17 @@ a span:hover {
 
     font-size: normal;
     font-family: "Funnel Sans", sans-serif;
-    color: var(--textA);
+    color: $textA;
 }
 
 .blockRibbon {
     height: fit-content;
-    margin: 15px auto 15px auto;
+    margin: 0 auto 0 auto;
     padding: 20px;
 
     font-size: normal;
     font-family: "Funnel Sans", sans-serif;
-    color: var(--textA);
+    color: $textD;
 
     background: url("/images/paper-texture.jpg");
     background-repeat: no-repeat;
@@ -228,11 +229,19 @@ a span:hover {
 }
 
 .verticalLine {
-    background-color: var(--textA);
+    background-color: transparentize($textA, .8);
     width: 2px;
     height: 75px;
 
     margin: 20px auto 20px auto;
+}
+
+#top-line {
+    border-radius: 2px 2px 0 0;
+}
+
+#bot-line {
+    border-radius: 0 0 2px 2px;
 }
 
 .verticalList {
@@ -247,8 +256,12 @@ a span:hover {
 .verticalText {
     writing-mode: sideways-lr;
     position: relative;
-    right: 2.3rem;
+    right: 2.2rem;
     height: max-content;
+
+    color: $textC;
+    font-size: 15px;
+    font-weight: 100;
 }
 
 .verticalList li {
@@ -284,11 +297,11 @@ a span:hover {
     margin-inline: auto;
     width: 850px;
 
-    color: var(--textA);
+    color: $textA;
     text-shadow: rgb(22, 22, 22, .1) 3px 3px 3px;
     
     word-spacing: 0px;
-    color: var(--textA);
+    color: $textA;
     font-size: 35px;
     font-weight: 400;
     text-decoration: none;
@@ -330,20 +343,35 @@ a span:hover {
     display: inline-flex;
 }
 
-.footer-line {
-    width: 100%;
-    height: 10px;
+footer {
+    box-shadow: 0px -10px 15px 5px rgb(0, 0, 0, 0.2);
+    height: 300px;
+    background-color: $darkD;
 
-    background-color: var(--darkA);
-    box-shadow: 0px 0px 10px 5px var(--darkA);
-    position: relative;
-    z-index: -10;
+    padding: 30px;
 }
 
-footer {
-    margin-top: 200px;
-    height: 200px;
-    background-color: var(--darkB);
+footer, footer a, footer a:visited {
+    font-family: "Cairo", sans-serif; 
+    color: $textD;
+}
+
+footer a {
+    text-decoration: none;
+    text-transform: lowercase;
+
+    transition: all .25s;
+}
+
+footer a:hover {
+    color: $textB;
+}
+
+
+footer .block {
+    display: flex;
+    flex-direction: row;
+    color: $textD;
 }
 
 footer .block {
@@ -352,7 +380,11 @@ footer .block {
 }
 
 footer p {
-    color: var(--lightA);
+    color: $lightA;
+}
+
+footer h1 {
+    width: 650;
 }
 
 .footer-icon img {
@@ -367,26 +399,34 @@ footer p {
     transform: scale(1.25);
 }
 
-.footer-sites {
-    display: flex;
-    margin: auto;
-    width: 40%;
+.footer-list li {
+    list-style-type: none;
+}   
+
+footer .block div {
+    margin: 0 15px 0 15px;
 }
 
-.footer-site-line {
-    height: 2px;
-    width: 5vw;
-    background-color: white;
+footer ul {
+    padding: 0;
 }
 
-.footer-sites li {
-    margin: auto;
-    list-style: none;
+.footer-info-title {
+    text-transform: lowercase;
+    font-family: "Cairo", sans-serif;
+    font-weight: 600;
+    color: #6b6777;
+}
+
+.footer-info-information {
+    text-transform: lowercase;
+    font-family: "Cairo", sans-serif;
+    color: #6b6777;
 }
 
 .nav-resume-dl {
     padding: 8px 10px 8px 10px;
-    border: var(--textA);
+    border: $textA;
     border-width: 2px;
     border-style: solid;
     border-radius: 25px;
@@ -403,17 +443,18 @@ footer p {
 }
 
 .nav-resume-dl:hover {
-    background-color: var(--textB);
-    border-color: var(--textB);
+    background-color: $textB;
+    border-color: $textB;
 }
 
 .nav-resume-dl span {
     padding: 0 5px 0 5px;
-    color: var(--textA);
+    color: $textA;
+    text-shadow: rgb(22, 22, 22, .1) 3px 3px 3px;
 }
 
 .nav-resume-dl:hover {
-    border-color: var(--textB);
+    border-color: $textB;
     color: white;
 }
 
@@ -448,7 +489,7 @@ footer p {
 }
 
 .nav-resume-link, .nav-resume-link:visited {
-    color: var(--textA);
+    color: $textA;
 }
 
 .resume-icon {
@@ -462,8 +503,178 @@ footer p {
 }
 
 #about-bio {
-    margin: 10px auto 10px auto;
-    color: var(--textC);
-    width: 50%;
+    margin: 30px auto 30px auto;
+    width: 70%;
     text-align: center;
+
+    font-size: 25px;
+    font-family: "Cairo", sans-serif;
+    font-weight: 600;
+    color: #6b6777;
+    line-height: 1.5;
+}
+
+.skills {
+    display: flex;
+    flex-direction: row;
+
+    width: 80%;
+    margin: 15px auto 30px auto;
+
+
+}
+
+.skill-box {
+    width: 20%;
+    margin: 0 auto 0 auto;
+}
+
+.highlight-header {
+    font-family: "Cairo", sans-serif; 
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 15px;
+
+    margin: 10px 0 10px;
+}
+
+.skill-box p {
+    text-align: justify;
+    margin: 10px 0 10px;
+}
+
+.skill-box img {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-color: $lightA;
+
+    padding: 5px;
+    border-radius: 10px;
+
+    margin: 0 0 10px;
+}
+
+.skills-line {
+    background-color: transparentize($textA, .8);
+    width: 2px;
+    height: 140px;
+
+    margin: auto 3.3% auto 3.3%;
+}
+
+.skills-div {
+    display: inline-flex;
+    width: 100%;
+}
+
+.skills-arrow {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+
+    cursor: pointer;
+    
+    transform: scale(1);
+
+    transition: all .25s;
+}
+
+#right-skill-arrow {
+    margin: auto auto auto 0;
+    transform: scale(1);
+}
+
+#right-skill-arrow:hover {
+    transform: scale(1.2);
+}
+
+#left-skill-arrow {
+    margin: auto 0 auto auto;
+    transform: scaleX(-1);
+}
+
+#left-skill-arrow:hover {
+    transform: scale(-1.2, 1.2);
+}
+
+.no-y-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.low-z {
+    z-index: -100;
+}
+
+.home-showcase {
+    
+}
+
+.showcase-icon {
+    width: 200px;
+    height: max-content;
+    object-fit: contain;
+}
+
+.block-header {
+    text-shadow: rgba(22, 22, 22, 0.1) 3px 3px 3px;
+    word-spacing: 0px;
+    color: $textD;
+    font-size: 70px;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: lowercase;
+
+    line-height: .9;
+}
+
+.block-header2 {
+    margin: 20px auto 20px auto;
+    text-shadow: rgba(22, 22, 22, 0.1) 3px 3px 3px;
+    word-spacing: 0px;
+    color: $textD;
+    font-size: 20px;
+    font-weight: 200;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: lowercase;
+}
+
+.footer-line {
+    height: 2px;
+    width: 60%;
+
+    margin: 20px auto 20px auto;
+
+    background-color: transparentize($textD, .8);
+}
+
+footer .block {
+    width: 80%;
+}
+
+#footer-attribution {
+    width: 70%;
+}
+
+.no-x-margin {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.justify-space-evenly {
+    justify-content: space-evenly;
 }

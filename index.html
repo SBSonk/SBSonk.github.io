@@ -6,12 +6,12 @@
   </title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/input.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@200..1000&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="/images/icon.png">
 </head>
 
@@ -53,14 +53,14 @@
   <div class="block">
     <div class="maxWidth inlineFlex">
       <div class="verticalList">
-        <div class="verticalLine"> </div>
-        <li class="verticalImage fit center"><a href="https://sbsonk.itch.io/"><img src="images/itch.png" alt="my itch"></a></li>
-        <li class="verticalImage fit center"><a href="https://github.com/SBSonk"><img src="images/git.png" alt="my github"></a></li>
-        <li class="verticalImage fit center"><a href="https://www.deviantart.com/sonksdepressed"><img src="images/deviantart.png" alt="my deviantart"></a></li>
+        <div class="verticalLine" id="top-line"> </div>
+        <li class="verticalImage fit center"><a href="https://sbsonk.itch.io/" target="_blank"><img src="images/itch.png" alt="my itch"></a></li>
+        <li class="verticalImage fit center"><a href="https://github.com/SBSonk" target="_blank"><img src="images/git.png" alt="my github"></a></li>
+        <li class="verticalImage fit center"><a href="https://www.deviantart.com/sonksdepressed" target="_blank"><img src="images/deviantart.png" alt="my deviantart"></a></li>
         <ul class="rotateList">
           <li class="verticalText">Find me here.</li>
         </ul>
-        <div class="verticalLine"> </div>
+        <div class="verticalLine" id="bot-line"> </div>
       </div>
   
       <div class="nameTag center">
@@ -77,27 +77,92 @@
   <div class="spacer"></div>  
 
   <div class="blockRibbon">
-  <h1 class="center fit">about me.</h1>
+    <h2 class="center" id="about-bio">Game developer first with a strong foundation in Unity, C#, and object-oriented programming.<br>Always open to learning new technologies to expand my horizons.</h2>
+    <div class="skills-div">
+      <!-- <img class="skills-arrow" src="images/right-arrow.png" id="left-skill-arrow"> -->
+      <div class="skills">
+        <div class="skill-box">
+          <img src="images/game-development.png">
+          <h2 class="highlight-header">Game Design</h2>
+          <p>I love creating gameplay that feels fun and balanced for players.</p>
+        </div>
+        <div class="skills-line"></div>
+        <div class="skill-box">
+          <img src="images/web-design.png">
+          <h2 class="highlight-header">Web Design</h2>
+          <p>I enjoy building sleek, responsive websites that gamers will love.</p>
+        </div>
+        <div class="skills-line"></div>
+        <div class="skill-box">
+          <img src="images/level.png">
+          <h2 class="highlight-header">Level Design</h2>
+          <p>Designing immersive worlds where players can explore and get lost is my passion.</p>
+        </div>
+        <div class="skills-line"></div>
+        <div class="skill-box">
+          <img src="images/3d.png">
+          <h2 class="highlight-header">Modelling</h2>
+          <p>I take pride in crafting detailed 3D assets that bring games to life.</p>
+        </div>
+      </div>
+      <!-- <img class="skills-arrow" src="images/right-arrow.png" id="right-skill-arrow"> -->
+    </div>
+    
+  </div>
+
   <div class="spacer"></div>  
-  <h2 class="center" id="about-bio">An aspiring game developer with a strong foundation in Unity, C#, and object-oriented programming looking to break into the game development industry. Always open to learning new technologies to expand my horizons.</h2>
-</div>
+
+  <div class="low-z">
+    <div class="block no-y-margin">
+      <h1 class="center fit block-header" id="t2">my favorite projects.</h1>
+      <div class="flex justify-center">
+        <div class="home-showcase inlineFlex">
+          <img class="showcase-icon" src="images/projects/rof.png" alt="temp">
+          <img class="showcase-banner" src="images/projects/banner 2.png" alt="temp">
+          <!-- <img class="showcase-img" src="images/projects/rof.png" alt="temp"> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
   <div class="spacer"></div>  
   
 
   <footer>
-    <div class="footer-line"></div>
-    <ul class="footer-sites">
-      <li><div class="footer-site-line"></div></li>
-      <li class="footer-icon fit center"><a href="https://sbsonk.itch.io/"><img src="images/itch.png" alt="my itch"></a></li>
-      <li><div class="footer-site-line"></div></li>
-      <li class="footer-icon fit center"><a href="https://github.com/SBSonk"><img src="images/git.png" alt="my github"></a></li>
-      <li><div class="footer-site-line"></div></li>
-      <li class="footer-icon fit center"><a href="https://www.deviantart.com/sonksdepressed"><img src="images/deviantart.png" alt="my deviantart"></a></li>
-      <li><div class="footer-site-line"></div></li>
-    </ul>
-    <div class="block">
-      <p>© 2024 Stanley C. Buenaventura. All rights reserved.</p>
+    <div class="block center fit flex justify-space-evenly">
+      <div>
+        <h1 class="block-header no-y-margin">I look forward to us working together!</h1>
+        <h2 class="block-header2">feel free to contact me!</h2>
+      </div>
+      <div>
+        <h2 class="highlight-header">NAVIGATION</h2>
+        <div class="horizontal-line"></div>
+        <ul class="footer-list">
+          <li><a href="index.html">Home.</a></li>
+          <li><a href="contact.html">Contact.</a></li>
+          <li><a href="work-history.html">Work History.</a></li>
+          <li><a href="portfolio.html">Portfolio.</a></li>
+          <li><a href="gallery.html">Gallery.</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="highlight-header">INFORMATION</h2>
+        <div class="horizontal-line"></div>
+        <ul class="footer-list">
+          <li><span class="footer-info-title">Name: </span><span class="footer-info-information">Stanley Buenaventura</span></li>
+          <li><span class="footer-info-title">Date of birth: </span><span class="footer-info-information">19.11.2004</span></li>
+          <li><span class="footer-info-title">Email: </span><span class="footer-info-information">sg.buenaventura04@gmail.com</span></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-line center"></div>
+
+    <div class="block center flex justify-space-between" id="footer-attribution">
+        <h2 class="highlight-header">© Created by</h2>
+        <h2 class="highlight-header">All rights Reserved</h2>
+      </div>
     </div>
   </footer>
 
