@@ -1,3 +1,4 @@
+
 new TypeIt("#t1")
     .options({likelife: true})
     .type("Hello,").break()

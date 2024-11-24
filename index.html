@@ -1,8 +1,8 @@
-<html>
+<!DOCTYPE html>
 
 <head>
   <title>
-    My website | Home
+    Personal Website | Home
   </title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -12,7 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@200..1000&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="/images/icon.png">
+  <link rel="icon" type="image/x-icon" href="/images/icon-white.png">
+
+  <script>
+    /*to prevent Firefox FOUC, this must be here*/
+    let FF_FOUC_FIX;
+  </script>
 </head>
 
 <body>
@@ -24,13 +29,13 @@
       <li class="roundedBorder navButton"><a href="contact.html"><span>contact</span></a></li>
       <li onmouseenter="showNavDropdown()" onmouseleave="hideNavDropdown()" class="roundedBorder navButton" id="navDropdown">
         <span>my work</span>
+        <img src="/images/right-down.png">
         <ul class="navDropdown hidden" id="navResumeHover">
-          <li><a href="portfolio.html"><span>Work History</span></a></li>
+          <li><a href="work-history.html"><span>Work History</span></a></li>
           <li><a href="portfolio.html"><span>Portfolio</span></a></li>
-          <li><a href="portfolio.html"><span>Gallery</span></a></li>
+          <li><a href="gallery.html"><span>Gallery</span></a></li>
         </ul>
       </li>
-      
     </ul>
 
     <a class="nav-resume-link" href="https://www.canva.com/design/DAGGsK8M3-U/0Xf7XVwtH6o743Ho4LMOGA/view?utm_content=DAGGsK8M3-U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h947a04a415" target=”_blank”>
@@ -46,94 +51,94 @@
     
   </nav>
 
-  <div class="spacer"></div>  
-  <div class="spacer"></div>  
-  <div class="spacer"></div>  
-  
-  <div class="block">
-    <div class="maxWidth inlineFlex">
-      <div class="verticalList">
-        <div class="verticalLine" id="top-line"> </div>
-        <li class="verticalImage fit center"><a href="https://sbsonk.itch.io/" target="_blank"><img src="images/itch.png" alt="my itch"></a></li>
-        <li class="verticalImage fit center"><a href="https://github.com/SBSonk" target="_blank"><img src="images/git.png" alt="my github"></a></li>
-        <li class="verticalImage fit center"><a href="https://www.deviantart.com/sonksdepressed" target="_blank"><img src="images/deviantart.png" alt="my deviantart"></a></li>
-        <ul class="rotateList">
-          <li class="verticalText">Find me here.</li>
-        </ul>
-        <div class="verticalLine" id="bot-line"> </div>
-      </div>
-  
-      <div class="nameTag center">
-        <ul>
-          <li><h1 id="t1"></h1></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  
-  <div class="spacer"></div>  
-  <div class="spacer"></div>  
-  <div class="spacer"></div>  
-  <div class="spacer"></div>  
-
-  <div class="blockRibbon">
-    <h2 class="center" id="about-bio">Game developer first with a strong foundation in Unity, C#, and object-oriented programming.<br>Always open to learning new technologies to expand my horizons.</h2>
-    <div class="skills-div">
-      <!-- <img class="skills-arrow" src="images/right-arrow.png" id="left-skill-arrow"> -->
-      <div class="skills">
-        <div class="skill-box">
-          <img src="images/game-development.png">
-          <h2 class="highlight-header">Game Design</h2>
-          <p>I love creating gameplay that feels fun and balanced for players.</p>
+  <div id="content">
+    <div class="spacer"></div>  
+    <div class="spacer"></div>  
+    <div class="spacer"></div>  
+    
+    <div class="block font-b text-color-a">
+      <div class="maxWidth inlineFlex">
+        <div class="verticalList">
+          <div class="verticalLine" id="top-line"> </div>
+          <li class="verticalImage fit center"><a href="https://sbsonk.itch.io/" target="_blank"><img src="images/itch.png" alt="my itch"></a></li>
+          <li class="verticalImage fit center"><a href="https://github.com/SBSonk" target="_blank"><img src="images/git.png" alt="my github"></a></li>
+          <li class="verticalImage fit center"><a href="https://www.deviantart.com/sonksdepressed" target="_blank"><img src="images/deviantart.png" alt="my deviantart"></a></li>
+          <ul class="rotateList">
+            <li class="verticalText">Find me here.</li>
+          </ul>
+          <div class="verticalLine" id="bot-line"> </div>
         </div>
-        <div class="skills-line"></div>
-        <div class="skill-box">
-          <img src="images/web-design.png">
-          <h2 class="highlight-header">Web Design</h2>
-          <p>I enjoy building sleek, responsive websites that gamers will love.</p>
-        </div>
-        <div class="skills-line"></div>
-        <div class="skill-box">
-          <img src="images/level.png">
-          <h2 class="highlight-header">Level Design</h2>
-          <p>Designing immersive worlds where players can explore and get lost is my passion.</p>
-        </div>
-        <div class="skills-line"></div>
-        <div class="skill-box">
-          <img src="images/3d.png">
-          <h2 class="highlight-header">Modelling</h2>
-          <p>I take pride in crafting detailed 3D assets that bring games to life.</p>
+    
+        <div class="nameTag center">
+          <ul>
+            <li><h1 id="t1"></h1></li>
+          </ul>
         </div>
       </div>
-      <!-- <img class="skills-arrow" src="images/right-arrow.png" id="right-skill-arrow"> -->
     </div>
     
-  </div>
-
-  <div class="spacer"></div>  
-
-  <div class="low-z">
-    <div class="block no-y-margin">
-      <h1 class="center fit block-header" id="t2">my favorite projects.</h1>
-      <div class="flex justify-center">
-        <div class="home-showcase inlineFlex">
-          <img class="showcase-icon" src="images/projects/rof.png" alt="temp">
-          <img class="showcase-banner" src="images/projects/banner 2.png" alt="temp">
-          <!-- <img class="showcase-img" src="images/projects/rof.png" alt="temp"> -->
+    <div class="spacer"></div>  
+    <div class="spacer"></div>  
+    <div class="spacer"></div>  
+    <div class="spacer"></div>  
+  
+    <div class="blockRibbon font-b text-color-d">
+      <h2 class="center" id="about-bio">Game developer first with a strong foundation in Unity, C#, and object-oriented programming.<br>Always open to learning new technologies to expand my horizons.</h2>
+      <div class="skills-div">
+        <!-- <img class="skills-arrow" src="images/right-arrow.png" id="left-skill-arrow"> -->
+        <div class="skills">
+          <div class="skill-box">
+            <img src="images/game-development.png">
+            <h2 class="highlight-header">Game Design</h2>
+            <p>I love creating gameplay that feels fun and balanced for players.</p>
+          </div>
+          <div class="skills-line"></div>
+          <div class="skill-box">
+            <img src="images/web-design.png">
+            <h2 class="highlight-header">Web Design</h2>
+            <p>I enjoy building sleek, responsive websites that gamers will love.</p>
+          </div>
+          <div class="skills-line"></div>
+          <div class="skill-box">
+            <img src="images/level.png">
+            <h2 class="highlight-header">Level Design</h2>
+            <p>Designing immersive worlds where players can explore and get lost is my passion.</p>
+          </div>
+          <div class="skills-line"></div>
+          <div class="skill-box">
+            <img src="images/3d.png">
+            <h2 class="highlight-header">Modelling</h2>
+            <p>I take pride in crafting detailed 3D assets that bring games to life.</p>
+          </div>
+        </div>
+        <!-- <img class="skills-arrow" src="images/right-arrow.png" id="right-skill-arrow"> -->
+      </div>
+      
+    </div>
+  
+    <div class="spacer"></div>  
+  
+    <div class="low-z">
+      <div class="block no-y-margin font-b text-color-a">
+        <h1 class="center fit block-header text-color-a" id="t2">my favorite projects.</h1>
+        <div class="flex justify-center">
+          <div class="home-showcase inlineFlex">
+            <img class="showcase-icon" src="images/projects/rof.png" alt="temp">
+            <img class="showcase-banner" src="images/projects/banner 2.png" alt="temp">
+            <!-- <img class="showcase-img" src="images/projects/rof.png" alt="temp"> -->
+          </div>
         </div>
       </div>
     </div>
+    
+  
+    <div class="spacer"></div>    
   </div>
-  
-
-  <div class="spacer"></div>  
-  
-
-  <footer>
+  <footer class="footer-shadow">
     <div class="block center fit flex justify-space-evenly">
       <div>
         <h1 class="block-header no-y-margin">I look forward to us working together!</h1>
-        <h2 class="block-header2">feel free to contact me!</h2>
+        <h2 class="block-header2">feel free to contact me through my socials below.</h2>
       </div>
       <div>
         <h2 class="highlight-header">NAVIGATION</h2>
@@ -160,7 +165,7 @@
     <div class="footer-line center"></div>
 
     <div class="block center flex justify-space-between" id="footer-attribution">
-        <h2 class="highlight-header">© Created by</h2>
+        <h2 class="highlight-header">© Created by Stanley Buenaventura</h2>
         <h2 class="highlight-header">All rights Reserved</h2>
       </div>
     </div>

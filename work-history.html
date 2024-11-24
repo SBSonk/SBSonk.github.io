@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    Personal Website | Work History
+  </title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/input.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@200..1000&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/images/icon-white.png">
+
+  <script>
+    /*to prevent Firefox FOUC, this must be here*/
+    let FF_FOUC_FIX;
+  </script>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html" class="navHome"><img src="images/icon.png" class="navIcon"></a>
+    
+    <ul>
+      <li class="roundedBorder navButton"><a href="index.html"><span>home</span></a></li>
+      <li class="roundedBorder navButton"><a href="contact.html"><span>contact</span></a></li>
+      <li onmouseenter="showNavDropdown()" onmouseleave="hideNavDropdown()" class="roundedBorder navButton" id="navDropdown">
+        <span>my work</span>
+        <img src="/images/right-down.png">
+        <ul class="navDropdown hidden" id="navResumeHover">
+          <li><a href="work-history.html"><span>Work History</span></a></li>
+          <li><a href="portfolio.html"><span>Portfolio</span></a></li>
+          <li><a href="gallery.html"><span>Gallery</span></a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <a class="nav-resume-link" href="https://www.canva.com/design/DAGGsK8M3-U/0Xf7XVwtH6o743Ho4LMOGA/view?utm_content=DAGGsK8M3-U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h947a04a415" target=”_blank”>
+      <div class="nav-resume-dl">
+        <span>
+          download resume
+        </span>
+  
+        <img src="images/downloadicon.png" class="resume-icon">
+        <img src="images/downloadicon-white.png" class="resume-icon-white resume-icon">
+      </div>
+    </a>
+    
+  </nav>
+
+  <div id="content">
+    <div class="spacer"></div>  
+    <div class="spacer"></div>  
+    <div class="spacer"></div>  
+    
+    <div class="blockRibbon font-b text-color-d">
+      <div class="work-history-segment-title center flex">
+        <h1 class="fit work-history-header font-a text-color-a uppercase">Work History.</h1>
+        <div class="work-history-segment-line"></div>
+      </div>
+      
+      <div class="flex inline justify-space-evenly center work-history-div">
+        <div class="work-history-margin work-history-info">
+          <h2 class="highlight-header no-y-margin work-history-highlight">PCI TECH CENTER</h1>
+          <h2 class="highlight-header no-y-margin work-history-date work-history-highlight">June 2024 - Present</h1>
+        </div>
+        <div class="flex flex-flow-column work-history-point">
+          <div class="work-history-top-cap"></div>
+          <div class="work-history-line"></div>
+        </div>
+        <div class="work-history-body work-history-margin">
+          <h1 class="work-history-title no-y-margin">Project Based Game Developer</h1>
+          <h2 class="block-header2 text-justify">Managed the development and maintenance of game software, collaborating with various departments such as art, sound, and QA to enhance the product. Coordinated with multiple teams to implement revisions and improvements while ensuring high-quality outcomes.</h1>
+        </div>
+      </div>
+      <div class="flex inline justify-space-evenly center work-history-div">
+        <div class="work-history-margin work-history-info">
+          <h2 class="highlight-header no-y-margin work-history-highlight">UIP Inc.</h1>
+          <h2 class="highlight-header no-y-margin work-history-date work-history-highlight">June 2024 - Present</h1>
+        </div>
+        <div class="flex flex-flow-column work-history-point">
+          <div class="work-history-top-line"></div>
+          <div class="work-history-cap"></div>
+          <div class="work-history-line"></div>
+        </div>
+        <div class="work-history-body work-history-margin">
+          <h1 class="work-history-title no-y-margin">Front-end Web Developer</h1>
+          <h2 class="block-header2 text-justify">Worked together with a team to design, conceptualize, and develop a new front-end interface for their employee attendance tracker website based on the aesthetics and brand of the company.</h1>
+        </div>
+      </div>
+      <div class="flex inline justify-space-evenly center work-history-div">
+        <div class="work-history-margin work-history-info">
+          <h2 class="highlight-header no-y-margin work-history-highlight">Self-Employed</h1>
+          <h2 class="highlight-header no-y-margin work-history-date work-history-highlight">2021 - 2022</h1>
+        </div>
+        <div class="flex flex-flow-column work-history-point">
+          <div class="work-history-top-line"></div>
+          <div class="work-history-cap"></div>
+
+        </div>
+        <div class="work-history-body work-history-margin">
+          <h1 class="work-history-title no-y-margin">Freelance VFX Animator</h1>
+          <h2 class="block-header2 text-justify">Worked closely with clients to convert still-character images to stylized and personalized animation loops using Adobe After Effects for use in website profiles and introductions.</h1>
+        </div>
+      </div>
+
+      <div class="work-history-segment-title center flex">
+        <h1 class="fit work-history-header font-a text-color-a uppercase">related experiences.</h1>
+        <div class="work-history-segment-line"></div>
+      </div>
+
+      <div class="flex inline justify-space-evenly center work-history-div">
+        <div class="work-history-margin work-history-info">
+          <h2 class="highlight-header no-y-margin work-history-highlight">CIIT SHS, INC. | BYTES </h1>
+          <h2 class="highlight-header no-y-margin work-history-date work-history-highlight">2022 - 2024</h1>
+        </div>
+        <div class="flex flex-flow-column work-history-point">
+          <div class="work-history-top-cap"></div>
+          <div class="work-history-line"></div>
+        </div>
+        <div class="work-history-body work-history-margin">
+          <h1 class="work-history-title no-y-margin">Level Designer, Gameplay Programmer</h1>
+          <h2 class="block-header2 text-justify">Developed Risk of Fail, a pixel-art top-down shooter, in collaboration with the BYTES Game Club. Focused on gameplay mechanics, enemy AI, and UI, working with level designers to create engaging scenarios. Showcased at CIIT Arts and Tech Week 2023 & 2024 and released on itch.io in May 2024.</h1>
+        </div>
+      </div>
+      <div class="flex inline justify-space-evenly center work-history-div">
+        <div class="work-history-margin work-history-info">
+          <h2 class="highlight-header no-y-margin work-history-highlight">Game Jam</h1>
+          <h2 class="highlight-header no-y-margin work-history-date work-history-highlight">2023</h1>
+        </div>
+        <div class="flex flex-flow-column work-history-point">
+          <div class="work-history-top-line"></div>
+          <div class="work-history-cap"></div>
+          <div class="work-history-line"></div>
+        </div>
+        <div class="work-history-body work-history-margin">
+          <h1 class="work-history-title no-y-margin">3D Artist, Gameplay Programmer</h1>
+          <h2 class="block-header2 text-justify">Developed Dreams of the Past for Quad Jam #7, themed “Only 2 Colors.” Collaborated with a team to implement a dynamic room-changing system and AI mechanics, enhancing the gameplay experience. Designed models and props to complement the game’s atmospheric narrative.</h1>
+        </div>
+      </div>
+      <div class="flex inline justify-space-evenly center work-history-div">
+        <div class="work-history-margin work-history-info">
+          <h2 class="highlight-header no-y-margin work-history-highlight">Game Jam</h1>
+          <h2 class="highlight-header no-y-margin work-history-date work-history-highlight">2023</h1>
+        </div>
+        <div class="flex flex-flow-column work-history-point">
+          <div class="work-history-top-line"></div>
+          <div class="work-history-cap"></div>
+          <div class="work-history-line"></div>
+        </div>
+        <div class="work-history-body work-history-margin">
+          <h1 class="work-history-title no-y-margin">Game Designer, Gameplay Programmer</h1>
+          <h2 class="block-header2 text-justify">Developed Xtreme Neo Combat for ScoreSpace Jam #24, themed “Evolve.” Collaborated with a team to implement scalable enemy systems and balanced progression mechanics in a roguelite style. Designed gameplay to adapt enemy frequency and difficulty indefinitely.</h1>
+        </div>
+      </div>
+      <div class="flex inline justify-space-evenly center work-history-div">
+        <div class="work-history-margin work-history-info">
+          <h2 class="highlight-header no-y-margin work-history-highlight">Independent Game Release</h1>
+          <h2 class="highlight-header no-y-margin work-history-date work-history-highlight">2018</h1>
+        </div>
+        <div class="flex flex-flow-column work-history-point">
+          <div class="work-history-top-line"></div>
+          <div class="work-history-cap"></div>
+
+        </div>
+        <div class="work-history-body work-history-margin">
+          <h1 class="work-history-title no-y-margin">Sole Developer</h1>
+          <h2 class="block-header2 text-justify">Designed and developed Let's Keep Going, an infinite runner mobile game. Implemented Unity Ads integration to enable monetization and successfully self-published the game on the Google Play Store.</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="block center fit flex justify-space-evenly">
+      <div>
+        <h1 class="work-history-title no-y-margin">I look forward to us working together!</h1>
+        <h2 class="block-header2">feel free to contact me through my socials below.</h2>
+      </div>
+      <div>
+        <h2 class="highlight-header">NAVIGATION</h2>
+        <div class="horizontal-line"></div>
+        <ul class="footer-list">
+          <li><a href="index.html">Home.</a></li>
+          <li><a href="contact.html">Contact.</a></li>
+          <li><a href="work-history.html">Work History.</a></li>
+          <li><a href="portfolio.html">Portfolio.</a></li>
+          <li><a href="gallery.html">Gallery.</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="highlight-header">INFORMATION</h2>
+        <div class="horizontal-line"></div>
+        <ul class="footer-list">
+          <li><span class="footer-info-title">Name: </span><span class="footer-info-information">Stanley Buenaventura</span></li>
+          <li><span class="footer-info-title">Date of birth: </span><span class="footer-info-information">19.11.2004</span></li>
+          <li><span class="footer-info-title">Email: </span><span class="footer-info-information">sg.buenaventura04@gmail.com</span></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-line center"></div>
+
+    <div class="block center flex justify-space-between" id="footer-attribution">
+        <h2 class="highlight-header">© Created by Stanley Buenaventura</h2>
+        <h2 class="highlight-header">All rights Reserved</h2>
+      </div>
+    </div>
+  </footer>
+
+  <!--Scripts-->
+  <script src="https://unpkg.com/typeit/dist/index.umd.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+
+</html>

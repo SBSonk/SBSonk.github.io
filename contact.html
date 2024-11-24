@@ -1,53 +1,136 @@
-<html>
+<!DOCTYPE html>
 
 <head>
   <title>
     Personal Website | Home
   </title>
 
-  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/input.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@200..1000&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/images/icon-white.png">
+
+  <script>
+    /*to prevent Firefox FOUC, this must be here*/
+    let FF_FOUC_FIX;
+  </script>
 </head>
 
 <body>
-  <script src="js/nav.js"></script>
-
   <nav>
     <a href="index.html" class="navHome"><img src="images/icon.png" class="navIcon"></a>
-
+    
     <ul>
-      <li class="roundedBorder navButton"><a href="index.html"><span>Home</span></a></li>
-      <li class="roundedBorder navButton"><a href="contact.html"><span>Contact</span></a></li>
+      <li class="roundedBorder navButton"><a href="index.html"><span>home</span></a></li>
+      <li class="roundedBorder navButton"><a href="contact.html"><span>contact</span></a></li>
       <li onmouseenter="showNavDropdown()" onmouseleave="hideNavDropdown()" class="roundedBorder navButton" id="navDropdown">
-        <span>Resume</span>
+        <span>my work</span>
+        <img src="/images/right-down.png">
         <ul class="navDropdown hidden" id="navResumeHover">
-          <li><a href="portfolio.html"><span>Work History</span></a></li>
+          <li><a href="work-history.html"><span>Work History</span></a></li>
           <li><a href="portfolio.html"><span>Portfolio</span></a></li>
-          <li><a href="portfolio.html"><span>Gallery</span></a></li>
+          <li><a href="gallery.html"><span>Gallery</span></a></li>
         </ul>
       </li>
-      
     </ul>
+
+    <a class="nav-resume-link" href="https://www.canva.com/design/DAGGsK8M3-U/0Xf7XVwtH6o743Ho4LMOGA/view?utm_content=DAGGsK8M3-U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h947a04a415" target=”_blank”>
+      <div class="nav-resume-dl">
+        <span>
+          download resume
+        </span>
+  
+        <img src="images/downloadicon.png" class="resume-icon">
+        <img src="images/downloadicon-white.png" class="resume-icon-white resume-icon">
+      </div>
+    </a>
+    
   </nav>
 
-  <div class="spacer"></div>
-  <div class="spacer"></div>  
+  <div id="content">
+    <div class="spacer"></div>  
+    <div class="spacer"></div>  
+    <div class="spacer"></div>  
+    
+    <h1 class="center fit block-header font-a" id="t1">let's get in touch.</h1>
+  
+    <div class="spacer"></div>  
+  
+    <div class="blockRibbon font-b text-color-a">
+      <div class="flex inline center justify-space-between contact-div">
+        <form action="https://formsubmit.co/fb52d2b54c32402ecbafb126e8f67b55" method="POST" class="center fit flex flex-flow-column no-x-margin" id="contact-form">
+          <div class="flex inline">
+            <input type="text" placeholder="Name" name="name" required class="contact-field contact-field-text font-b text-color-d" id="contact-text-left">
+            <input type="email" placeholder="Email" name="email" required class="contact-field contact-field-text font-b text-color-d"  id="contact-text-right">
+          </div>
+          <textarea type="text" placeholder="Hello, world!" name="message" required class="font-b text-color-d" id="contact-field-message"></textarea>
+          <button type="submit" id="contact-form-submit" class="font-a text-color-d lower-case center">Send</button>
+        </form> 
 
-  <div class="block">
-    <h1 class="center fit">Contact me!</h1>
+        <div class="verticalLine no-y-margin" id="contact-line"> </div>
 
-    <form action="https://formsubmit.co/fb52d2b54c32402ecbafb126e8f67b55" method="POST" class="center fit">
-        Your Name: <input type="text" name="name" required> <br>
-        Your Email: <input type="email" name="email" required> <br>
-        Your Message: <input type="text" name="message" required> <br>
-        <button type="submit">Send</button>
-   </form> 
+        <div>
+          <h2>Or reach out to me!</h2>
+          
+          <div>
+            <a>Gmail</a>
+            <a>LinkedIn</a>
+            <a>Discord</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="spacer"></div>  
+    <div class="spacer"></div>  
+    <div class="spacer"></div>  
   </div>
+  
+  <footer class="footer-shadow">
+    <div class="block center fit flex justify-space-evenly">
+      <div>
+        <h1 class="block-header no-y-margin">I look forward to us working together!</h1>
+        <h2 class="block-header2">feel free to contact me through my socials below.</h2>
+      </div>
+      <div>
+        <h2 class="highlight-header">NAVIGATION</h2>
+        <div class="horizontal-line"></div>
+        <ul class="footer-list">
+          <li><a href="index.html">Home.</a></li>
+          <li><a href="contact.html">Contact.</a></li>
+          <li><a href="work-history.html">Work History.</a></li>
+          <li><a href="portfolio.html">Portfolio.</a></li>
+          <li><a href="gallery.html">Gallery.</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="highlight-header">INFORMATION</h2>
+        <div class="horizontal-line"></div>
+        <ul class="footer-list">
+          <li><span class="footer-info-title">Name: </span><span class="footer-info-information">Stanley Buenaventura</span></li>
+          <li><span class="footer-info-title">Date of birth: </span><span class="footer-info-information">19.11.2004</span></li>
+          <li><span class="footer-info-title">Email: </span><span class="footer-info-information">sg.buenaventura04@gmail.com</span></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-line center"></div>
 
-  <div class="spacer"></div>  
-
-  <footer class="block">
-    <p>© 2024 Stanley C. Buenaventura. All rights reserved.</p>
+    <div class="block center flex justify-space-between" id="footer-attribution">
+        <h2 class="highlight-header">© Created by Stanley Buenaventura</h2>
+        <h2 class="highlight-header">All rights Reserved</h2>
+      </div>
+    </div>
   </footer>
+
+  <!--Scripts-->
+  <script src="https://unpkg.com/typeit/dist/index.umd.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/contact.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,20 @@
+@keyframes page-show {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+#content {
+  animation: page-show 1s;
+}
+
 body {
   background-image: url("/images/background.png");
   background-attachment: fixed;
@@ -116,6 +133,24 @@ nav span:hover {
   opacity: 100%;
 }
 
+#navDropdown img {
+  width: 24px;
+  height: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: all 0.25s;
+  filter: grayscale(1);
+  position: absolute;
+  transform: translate(-10px, -2px) rotate(0);
+  opacity: 0;
+}
+
+#navDropdown:hover img {
+  transform: translate(5px, -2px) rotate(45deg);
+  opacity: 1;
+  filter: grayscale(0);
+}
+
 .navDropdown li {
   margin: 5px 0 5px;
   padding: 5px 0 5px 0;
@@ -154,8 +189,6 @@ a span:hover {
   margin: 15px auto 15px auto;
   border-radius: 25px;
   font-size: normal;
-  font-family: "Funnel Sans", sans-serif;
-  color: #24292f;
 }
 
 .blockRibbon {
@@ -164,16 +197,11 @@ a span:hover {
   margin: 0 auto 0 auto;
   padding: 20px;
   font-size: normal;
-  font-family: "Funnel Sans", sans-serif;
-  color: #6b6777;
-  background: url("/images/paper-texture.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #f8f4f7;
   box-shadow: 0px 10px 15px 5px rgba(0, 0, 0, 0.2);
 }
 
 .blockRibbon h1 {
-  font-size: 50px;
   text-shadow: rgba(22, 22, 22, 0.1) 3px 3px 3px;
 }
 
@@ -268,7 +296,6 @@ a span:hover {
   color: #24292f;
   text-shadow: rgba(22, 22, 22, 0.1) 3px 3px 3px;
   word-spacing: 0px;
-  color: #24292f;
   font-size: 35px;
   font-weight: 400;
   text-decoration: none;
@@ -312,10 +339,13 @@ a span:hover {
 }
 
 footer {
-  box-shadow: 0px -10px 15px 5px rgba(0, 0, 0, 0.2);
-  height: 300px;
-  background-color: #f4f4f4;
+  height: 325px;
+  background-color: #f8f4f7;
   padding: 30px;
+}
+
+.footer-shadow {
+  box-shadow: 0px -10px 15px 5px rgba(0, 0, 0, 0.2);
 }
 
 footer, footer a, footer a:visited {
@@ -349,7 +379,7 @@ footer p {
 }
 
 footer h1 {
-  width: 650;
+  width: 650px;
 }
 
 .footer-icon img {
@@ -568,7 +598,6 @@ footer ul {
 .block-header {
   text-shadow: rgba(22, 22, 22, 0.1) 3px 3px 3px;
   word-spacing: 0px;
-  color: #6b6777;
   font-size: 70px;
   font-style: normal;
   font-variant: normal;
@@ -580,7 +609,6 @@ footer ul {
   margin: 20px auto 20px auto;
   text-shadow: rgba(22, 22, 22, 0.1) 3px 3px 3px;
   word-spacing: 0px;
-  color: #6b6777;
   font-size: 20px;
   font-weight: 200;
   font-style: normal;
@@ -590,7 +618,7 @@ footer ul {
 
 .footer-line {
   height: 2px;
-  width: 60%;
+  width: 80%;
   margin: 20px auto 20px auto;
   background-color: rgba(107, 103, 119, 0.2);
 }
@@ -612,6 +640,14 @@ footer .block {
   display: flex;
 }
 
+.flex-flow-column {
+  flex-flow: column;
+}
+
+.flex-flow-row {
+  flex-flow: row;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -622,4 +658,211 @@ footer .block {
 
 .justify-space-evenly {
   justify-content: space-evenly;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-color-a {
+  color: #24292f;
+}
+
+.text-color-b {
+  color: #401268;
+}
+
+.text-color-c {
+  color: #494850;
+}
+
+.text-color-d {
+  color: #6b6777;
+}
+
+.font-a {
+  font-family: "Roboto", sans-serif;
+}
+
+.font-b {
+  font-family: "Funnel Sans", sans-serif;
+}
+
+.font-c {
+  font-family: "Cairo", sans-serif;
+}
+
+.contact-div {
+  width: 60%;
+  padding: 20px 0 20px 0;
+}
+
+#contact-form {
+  width: 60%;
+}
+
+.contact-field {
+  margin: 0 auto 0 auto;
+  width: 50%;
+}
+
+.contact-field-text {
+  border-style: solid;
+  border-radius: 25px;
+  border-color: rgba(107, 103, 119, 0.2);
+  padding: 5px;
+  text-align: center;
+}
+
+#contact-text-left {
+  border-right-width: 1px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#contact-text-right {
+  border-left-width: 1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#contact-form-submit {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: transparent;
+  margin-top: 10px;
+  padding: 5px 30px 5px 30px;
+  font-weight: 400;
+  border-radius: 25px;
+  border: rgba(107, 103, 119, 0.2) solid 2px;
+  text-shadow: rgba(22, 22, 22, 0.1) 3px 3px 3px;
+  color: rgba(107, 103, 119, 0.8);
+  font-size: 20px;
+  transition: all 0.25s;
+}
+
+#contact-form-submit:hover {
+  color: white;
+  border-color: #401268;
+  background-color: #401268;
+}
+
+#contact-field-message {
+  height: 280px;
+  vertical-align: top;
+  resize: none;
+  margin: 10px 0 10px;
+  padding: 10px;
+  border-style: solid;
+  border-radius: 25px;
+  border-color: rgba(107, 103, 119, 0.2);
+}
+
+#contact-line {
+  border-radius: 2px;
+  height: 23rem;
+  margin: auto 10px auto 10px;
+}
+
+.lower-case {
+  text-transform: lowercase;
+}
+
+.upper-case {
+  text-transform: uppercase;
+}
+
+.work-history-point {
+  width: 30px;
+}
+
+.work-history-cap {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  background-color: rgba(64, 18, 104, 0.8);
+  border-radius: 100%;
+}
+
+.work-history-top-cap {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  margin-top: 65px;
+  background-color: rgba(64, 18, 104, 0.8);
+  border-radius: 100%;
+}
+
+.work-history-line {
+  width: 4px;
+  height: 185px;
+  background-color: rgba(64, 18, 104, 0.4);
+  margin: 0 auto 0 auto;
+}
+
+.work-history-top-line {
+  width: 4px;
+  height: 65px;
+  background-color: rgba(64, 18, 104, 0.4);
+  margin: 0 auto 0 auto;
+}
+
+.work-history-body {
+  width: 70%;
+}
+
+.work-history-margin {
+  margin: 50px 0 50px;
+}
+
+.work-history-div {
+  width: 60%;
+  height: 250px;
+}
+
+.work-history-info {
+  margin: 60px 0 50px;
+}
+
+.work-history-date {
+  font-weight: 600;
+}
+
+.work-history-highlight {
+  width: 150px;
+}
+
+.work-history-title {
+  text-shadow: rgba(22, 22, 22, 0.1) 3px 3px 3px;
+  word-spacing: 0px;
+  font-size: 40px;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: lowercase;
+  line-height: 0.9;
+}
+
+.work-history-header {
+  text-shadow: rgba(22, 22, 22, 0.1) 3px 3px 3px;
+  word-spacing: 0px;
+  font-size: 60px;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: lowercase;
+  line-height: 0.9;
+  margin-left: 30px;
+  padding-right: 15px;
+}
+
+.work-history-segment-title {
+  width: 60%;
+}
+
+.work-history-segment-line {
+  background-color: rgba(36, 41, 47, 0.2);
+  flex: 1;
+  height: 2px;
+  margin: auto 30px auto auto;
 }/*# sourceMappingURL=input.css.map */
