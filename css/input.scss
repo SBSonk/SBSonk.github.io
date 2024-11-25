@@ -26,6 +26,26 @@ $textD: #6b6777;
     }
 }
 
+@keyframes slide-left {
+    from {
+        transform: translateX(40px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slide-right {
+    from {
+        transform: translateX(-40px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
 #content {
     animation: page-show 1s;
 }
@@ -364,6 +384,11 @@ a span:hover {
 .fit {
     width: max-content;
     height: max-content;
+}
+
+.full {
+    width: 100%;
+    height: 100%;
 }
 
 .maxWidth {
@@ -708,8 +733,16 @@ footer .block {
     flex-flow: row;
 }
 
+.justify-space-first {
+    justify-content: first baseline;
+}
+
 .justify-center {
     justify-content: center;
+}
+
+.justify-right {
+    justify-content: right;
 }
 
 .justify-space-between {
@@ -738,6 +771,14 @@ footer .block {
 
 .text-color-d {
     color: $textD;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
 }
 
 .font-a {
@@ -953,11 +994,9 @@ footer .block {
     top: 0;
     left: 0;
     position: fixed;
-    background-color: transparentize($color: $darkA, $amount: .1);
+    background-color: transparentize($color: $darkA, $amount: .6);
 
     transition: all .25s;
-
-    z-index: 10;
 }
 
 .gallery-hidden {
@@ -965,6 +1004,168 @@ footer .block {
     pointer-events: none;
 }
 
+.gallery-layer {
+    z-index: 20;
+}
+
+.gallery-view-block {
+    width: 60%;
+    height: 60%;
+    border-radius: 25px;
+    background-color: $darkD;
+
+    padding: 25px;
+    box-shadow: 0px 10px 15px 5px rgb(0, 0, 0, 0.2);
+}
+
+.gallery-back-button {
+    position:absolute;
+
+    width: 15px;
+    height: 15px;
+
+    filter: grayscale(1);
+    transform: scale(1);
+
+    transition: all .25s;
+
+    transform-origin: center;
+}
+
+.gallery-back-button:hover {
+    transform: scale(1.2);
+    filter: grayscale(0);
+    cursor: pointer;
+}
+
+.gallery-view-block div img {
+    max-width: 100%;
+    width: fit-content;
+    object-fit: contain;
+    height: 70%;
+    border-radius: 5px;
+
+    box-shadow: 0px 10px 15px 5px rgb(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+    width: 500px;
+    object-fit: contain;
+    border-radius: 5px;
+
+    box-shadow: 0px 10px 15px 5px rgb(0, 0, 0, 0.2);
+
+    transition: all .25s;
+}
+
+.gallery-image:hover {
+    filter: brightness(.6);
+}
+
+.gallery-view-block div h2 {
+    width: 80%;
+    height: 10%;
+
+    margin-bottom: 40px;
+}
+
+.gallery-block {
+    padding: 5px;
+}
+
 .disable-scroll {
     overflow-y: hidden;
+}
+
+.flex-wrap-gallery {
+    flex-wrap: wrap;
+    width: 65%;
+}
+
+.portfolio-item {
+    margin: 0 0 30px;
+}
+
+.portfolio-image img {
+    width: 400px;
+    height: fit-content;
+    box-shadow: 0px 10px 15px 5px rgb(0, 0, 0, 0.2);
+
+    margin: 15px 0 15px ;
+    border-radius: 5px;
+
+    background-color: transparent;
+    object-fit:contain;
+}
+
+.portfolio-image div{
+    margin-right: 30px;
+    margin-left: 30px;
+
+    padding-top: 10px;
+}
+
+.portfolio-div {
+    width: 60%;
+}
+
+.portfolio-line {
+    background-color: transparentize($textA, .8);
+    flex: 1;
+    height: 2px;
+}
+
+.portfolio-right-margin {
+    margin: auto 30px auto auto;
+}
+
+.portfolio-left-margin {
+    margin: auto auto auto 30px;
+}
+
+.portfolio-view-project a, a:visited {
+    color: $textD;
+}
+
+.portfolio-view-project {
+    text-decoration: none;
+}
+
+.portfolio-text {
+    height: 145px
+}
+
+.right-margin {
+    margin: auto 0 auto auto;
+}
+
+.left-margin {
+    margin: auto auto auto 0;
+}
+
+.slide-left {
+    animation: slide-left 1s;
+}
+
+.slide-right {
+    animation: slide-right 1s;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.portfolio-header {
+    text-shadow: rgba(22, 22, 22, 0.1) 3px 3px 3px;
+    word-spacing: 0px;
+    font-size: 50px;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: lowercase;
+
+    line-height: .9;
 }

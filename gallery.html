@@ -54,18 +54,70 @@
   <div id="content">
     <div class="spacer"></div>  
     <div class="spacer"></div>  
-    <div class="spacer"></div>  
     
-    <div class="block fit center">
+    <div class="block center">
       <h1 class="center fit block-header font-a">gallery.</h1>
       <h2 class="center fit block-header2 font-a">here are a collection of images displaying some of my projects.</h2>
 
-      <div class="gallery">
+      <div class="flex-wrap-gallery center gallery flex justify-space-evenly">
         <div class="gallery-block">
-          <img src="images/projects/rof.png" alt="risk of fail screenshot" onclick="ShowGallery('gallery-1')">
-          <h2 class="block-header2 font-a">Risk of fail</h2>
-          <div class="gallery-view gallery-hidden" id="gallery-1">
-            <img src="images/right-arrow.png" alt="back" onclick="HideGallery('gallery-1')">
+          <img class="gallery-image" src="images/projects/hallways.gif" alt="risk of fail screenshot" onclick="ShowGallery('gallery-1')">
+          <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-1">
+            <div class="flex center gallery-view-block">
+              <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-1')">
+              <div class="full center flex flex-flow-column">
+                <img class="center" src="images/projects/hallways.gif" alt="risk of fail screenshot">
+                <h2 class="block-header2 font-a text-center">Risk of fail 1</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-block">
+          <img class="gallery-image" src="images/projects/boss-fight.gif" alt="risk of fail screenshot 2" onclick="ShowGallery('gallery-2')">
+          <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-2">
+            <div class="flex center gallery-view-block">
+              <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-2')">
+              <div class="full center flex flex-flow-column">
+                <img class="center" src="images/projects/boss-fight.gif" alt="risk of fail screenshot 2">
+                <h2 class="block-header2 font-a text-center">Risk of fail 2</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-block">
+          <img class="gallery-image" src="images/projects/dreams (1).gif" alt="dreams of the past 1" onclick="ShowGallery('gallery-3')">
+          <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-3">
+            <div class="flex center gallery-view-block">
+              <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-3')">
+              <div class="full center flex flex-flow-column">
+                <img class="center" src="images/projects/dreams (1).gif" alt="dreams of the past 1">
+                <h2 class="block-header2 font-a text-center">Dreams of the past 1</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-block">
+          <img class="gallery-image" src="images/projects/dreams (2).gif" alt="dreams of the past 2" onclick="ShowGallery('gallery-4')">
+          <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-4">
+            <div class="flex center gallery-view-block">
+              <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-4')">
+              <div class="full center flex flex-flow-column">
+                <img class="center" src="images/projects/dreams (2).gif" alt="dreams of the past 2">
+                <h2 class="block-header2 font-a text-center">Dreams of the past 2</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-block">
+          <img class="gallery-image" src="images/projects/XTREME NEO COMBAT.gif" alt="extreme neo combat" onclick="ShowGallery('gallery-5')">
+          <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-5">
+            <div class="flex center gallery-view-block">
+              <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-5')">
+              <div class="full center flex flex-flow-column">
+                <img class="center" src="images/projects/XTREME NEO COMBAT.gif" alt="extreme neo combat 2">
+                <h2 class="block-header2 font-a text-center">Xtreme Neo Combat</h2>
+              </div>
+            </div>
           </div>
         </div>
       </div>
