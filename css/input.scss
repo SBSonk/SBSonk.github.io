@@ -946,3 +946,25 @@ footer .block {
     height: 2px;
     margin: auto 30px auto auto;
 }
+
+.gallery-view {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: transparentize($color: $darkA, $amount: .1);
+
+    transition: all .25s;
+
+    z-index: 10;
+}
+
+.gallery-hidden {
+    opacity: 0%;
+    pointer-events: none;
+}
+
+.disable-scroll {
+    overflow-y: hidden;
+}

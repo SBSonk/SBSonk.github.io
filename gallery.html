@@ -59,6 +59,16 @@
     <div class="block fit center">
       <h1 class="center fit block-header font-a">gallery.</h1>
       <h2 class="center fit block-header2 font-a">here are a collection of images displaying some of my projects.</h2>
+
+      <div class="gallery">
+        <div class="gallery-block">
+          <img src="images/projects/rof.png" alt="risk of fail screenshot" onclick="ShowGallery('gallery-1')">
+          <h2 class="block-header2 font-a">Risk of fail</h2>
+          <div class="gallery-view gallery-hidden" id="gallery-1">
+            <img src="images/right-arrow.png" alt="back" onclick="HideGallery('gallery-1')">
+          </div>
+        </div>
+      </div>
     </div>
     
   
@@ -109,6 +119,7 @@
   <script src="https://unpkg.com/typeit/dist/index.umd.js"></script>
   <script src="js/index.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/gallery.js"></script>
 </body>
 
 </html>
