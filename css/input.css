@@ -1075,4 +1075,22 @@ footer .block {
   font-variant: normal;
   text-transform: lowercase;
   line-height: 0.9;
+}
+
+.technologies {
+  margin: 2rem 0 2rem;
+  gap: 10px;
+}
+
+.technology-container {
+  border-radius: 2.5%;
+  background-color: #f8f4f7;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.technology-container > img {
+  margin: auto;
+  width: 10vw;
 }/*# sourceMappingURL=input.css.map */

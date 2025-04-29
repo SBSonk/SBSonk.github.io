@@ -1169,3 +1169,23 @@ footer .block {
 
     line-height: .9;
 }
+
+.technologies {
+    margin: 2rem 0 2rem;
+    gap: 10px;
+}
+
+.technology-container {
+    border-radius: 2.5%;
+    background-color: $darkD;
+
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.technology-container > img {
+    margin: auto;
+    width: 10vw;
+}
