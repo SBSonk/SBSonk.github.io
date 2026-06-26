@@ -1,0 +1,54 @@
+[
+  {
+    "title": "Work History",
+    "items": [
+      {
+        "company": "PCI TECH CENTER",
+        "date": "2024 - Present",
+        "title": "Project Based Game Developer",
+        "description": "Managed the development and maintenance of game software, collaborating with various departments such as art, sound, and QA to enhance the product. Coordinated with multiple teams to implement revisions and improvements while ensuring high-quality outcomes."
+      },
+      {
+        "company": "UIP Inc.",
+        "date": "2024",
+        "title": "Front-end Web Developer",
+        "description": "Worked together with a team to design, conceptualize, and develop a new front-end interface for their employee attendance tracker website based on the aesthetics and brand of the company."
+      },
+      {
+        "company": "Self-Employed",
+        "date": "2021 - 2022",
+        "title": "Freelance VFX Animator",
+        "description": "Worked closely with clients to convert still-character images to stylized and personalized animation loops using Adobe After Effects for use in website profiles and introductions."
+      }
+    ]
+  },
+  {
+    "title": "Related Experiences",
+    "items": [
+      {
+        "company": "CIIT SHS, INC. | BYTES",
+        "date": "2022 - 2024",
+        "title": "Level Designer, Gameplay Programmer",
+        "description": "Developed Risk of Fail, a pixel-art top-down shooter, in collaboration with the BYTES Game Club. Focused on gameplay mechanics, enemy AI, and UI, working with level designers to create engaging scenarios. Showcased at CIIT Arts and Tech Week 2023 & 2024 and released on itch.io in May 2024."
+      },
+      {
+        "company": "Game Jam",
+        "date": "2023",
+        "title": "3D Artist, Gameplay Programmer",
+        "description": "Developed Dreams of the Past for Quad Jam #7, themed 'Only 2 Colors.' Collaborated with a team to implement a dynamic room-changing system and AI mechanics, enhancing the gameplay experience. Designed models and props to complement the game’s atmospheric narrative."
+      },
+      {
+        "company": "Game Jam",
+        "date": "2023",
+        "title": "Game Designer, Gameplay Programmer",
+        "description": "Developed Xtreme Neo Combat for ScoreSpace Jam #24, themed 'Evolve.' Collaborated with a team to implement scalable enemy systems and balanced progression mechanics in a roguelite style. Designed gameplay to adapt enemy frequency and difficulty indefinitely."
+      },
+      {
+        "company": "Independent Game Release",
+        "date": "2018",
+        "title": "Sole Developer",
+        "description": "Designed and developed Let's Keep Going, an infinite runner mobile game. Implemented Unity Ads integration to enable monetization and successfully self-published the game on the Google Play Store."
+      }
+    ]
+  }
+]

@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-
+<html>
 <head>
-  <title>
-    Personal Website | Portfolio
-  </title>
-
+  <title>Personal Website | Portfolio</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" href="css/input.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,17 +10,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@200..1000&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="/images/icon-white.png">
-
   <script>
     /*to prevent Firefox FOUC, this must be here*/
     let FF_FOUC_FIX;
   </script>
 </head>
-
 <body>
+
   <nav>
     <a href="index.html" class="navHome"><img src="images/icon.png" class="navIcon"></a>
-    
     <ul>
       <li class="roundedBorder navButton"><a href="index.html"><span>home</span></a></li>
       <li class="roundedBorder navButton"><a href="contact.html"><span>contact</span></a></li>
@@ -37,96 +32,89 @@
         </ul>
       </li>
     </ul>
-
-    <a class="nav-resume-link" href="https://www.canva.com/design/DAGGsK8M3-U/0Xf7XVwtH6o743Ho4LMOGA/view?utm_content=DAGGsK8M3-U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h947a04a415" target=”_blank”>
+    <a class="nav-resume-link" href="https://www.canva.com/design/DAGGsK8M3-U/0Xf7XVwtH6o743Ho4LMOGA/view?utm_content=DAGGsK8M3-U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h947a04a415" target="_blank">
       <div class="nav-resume-dl">
-        <span>
-          download resume
-        </span>
-  
+        <span>download resume</span>
         <img src="images/downloadicon.png" class="resume-icon">
         <img src="images/downloadicon-white.png" class="resume-icon-white resume-icon">
       </div>
     </a>
-    
   </nav>
 
   <div id="content">
-    <div class="spacer"></div>  
-    <div class="spacer"></div>  
-    
+    <div class="spacer"></div>
+    <div class="spacer"></div>
     <div class="block center">
       <h1 class="center fit block-header font-a">gallery.</h1>
       <h2 class="center fit block-header2 font-a">here are a collection of images displaying some of my projects.</h2>
-
       <div class="flex-wrap-gallery center gallery flex justify-space-evenly">
         <div class="gallery-block">
-          <img class="gallery-image" src="images/projects/rover-i.gif" alt="risk of fail screenshot" onclick="ShowGallery('gallery-0')">
+          <img class="gallery-image" src="images/projects/rover-i.gif" alt="Rover - I screenshot" onclick="ShowGallery('gallery-0')">
           <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-0">
             <div class="flex center gallery-view-block">
               <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-0')">
               <div class="full center flex flex-flow-column">
-                <img class="center" src="images/projects/rover-i.gif" alt="rover i screenshot">
+                <img class="center" src="images/projects/rover-i.gif" alt="Rover - I screenshot">
                 <h2 class="block-header2 font-a text-center">Rover - I</h2>
               </div>
             </div>
           </div>
         </div>
         <div class="gallery-block">
-          <img class="gallery-image" src="images/projects/hallways.gif" alt="risk of fail screenshot" onclick="ShowGallery('gallery-1')">
+          <img class="gallery-image" src="images/projects/hallways.gif" alt="Risk of Fail screenshot 1" onclick="ShowGallery('gallery-1')">
           <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-1">
             <div class="flex center gallery-view-block">
               <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-1')">
               <div class="full center flex flex-flow-column">
-                <img class="center" src="images/projects/hallways.gif" alt="risk of fail screenshot">
-                <h2 class="block-header2 font-a text-center">Risk of fail 1</h2>
+                <img class="center" src="images/projects/hallways.gif" alt="Risk of Fail screenshot 1">
+                <h2 class="block-header2 font-a text-center">Risk of Fail 1</h2>
               </div>
             </div>
           </div>
         </div>
         <div class="gallery-block">
-          <img class="gallery-image" src="images/projects/boss-fight.gif" alt="risk of fail screenshot 2" onclick="ShowGallery('gallery-2')">
+          <img class="gallery-image" src="images/projects/boss-fight.gif" alt="Risk of Fail screenshot 2" onclick="ShowGallery('gallery-2')">
           <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-2">
             <div class="flex center gallery-view-block">
               <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-2')">
               <div class="full center flex flex-flow-column">
-                <img class="center" src="images/projects/boss-fight.gif" alt="risk of fail screenshot 2">
-                <h2 class="block-header2 font-a text-center">Risk of fail 2</h2>
+                <img class="center" src="images/projects/boss-fight.gif" alt="Risk of Fail screenshot 2">
+                <h2 class="block-header2 font-a text-center">Risk of Fail 2</h2>
               </div>
             </div>
           </div>
         </div>
         <div class="gallery-block">
-          <img class="gallery-image" src="images/projects/dreams (1).gif" alt="dreams of the past 1" onclick="ShowGallery('gallery-3')">
+          <img class="gallery-image" src="images/projects/dreams (1).gif" alt="Dreams of the Past screenshot 1" onclick="ShowGallery('gallery-3')">
           <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-3">
             <div class="flex center gallery-view-block">
               <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-3')">
               <div class="full center flex flex-flow-column">
-                <img class="center" src="images/projects/dreams (1).gif" alt="dreams of the past 1">
+                <img class="center" src="images/projects/dreams (1).gif" alt="Dreams of the Past screenshot 1">
                 <h2 class="block-header2 font-a text-center">Dreams of the past 1</h2>
               </div>
             </div>
           </div>
         </div>
         <div class="gallery-block">
-          <img class="gallery-image" src="images/projects/dreams (2).gif" alt="dreams of the past 2" onclick="ShowGallery('gallery-4')">
+          <img class="gallery-image" src="images/projects/dreams (2).gif" alt="Dreams of the Past screenshot 2" onclick="ShowGallery('gallery-4')">
           <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-4">
             <div class="flex center gallery-view-block">
               <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-4')">
               <div class="full center flex flex-flow-column">
-                <img class="center" src="images/projects/dreams (2).gif" alt="dreams of the past 2">
+                <img class="center" src="images/projects/dreams (2).gif" alt="Dreams of the Past screenshot 2">
                 <h2 class="block-header2 font-a text-center">Dreams of the past 2</h2>
               </div>
             </div>
           </div>
         </div>
         <div class="gallery-block">
-          <img class="gallery-image" src="images/projects/XTREME NEO COMBAT.gif" alt="extreme neo combat" onclick="ShowGallery('gallery-5')">
+          <img class="gallery-image" src="images/projects/XTREME NEO COMBAT.gif" alt="Xtreme Neo Combat screenshot" onclick="ShowGallery('gallery-5')">
           <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-5">
             <div class="flex center gallery-view-block">
               <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-5')">
               <div class="full center flex flex-flow-column">
-                <img class="center" src="images/projects/XTREME NEO COMBAT.gif" alt="extreme neo combat 2">
+                <img class="center" src="images/projects/XTREME NEO COMBAT.gif" alt="Xtreme Neo Combat screenshot">
                 <h2 class="block-header2 font-a text-center">Xtreme Neo Combat</h2>
               </div>
             </div>
@@ -134,15 +122,11 @@
         </div>
       </div>
     </div>
-    
-  
-    
-    <div class="spacer"></div>  
-    <div class="spacer"></div>  
-    <div class="spacer"></div>  
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
   </div>
-  
-  <footer class="footer-shadow">
+  <footer>
     <div class="block center fit flex justify-space-evenly">
       <div>
         <h1 class="block-header no-y-margin">I look forward to us working together!</h1>
@@ -169,13 +153,10 @@
         </ul>
       </div>
     </div>
-    
     <div class="footer-line center"></div>
-
     <div class="block center flex justify-space-between" id="footer-attribution">
-        <h2 class="highlight-header">© Created by Stanley Buenaventura</h2>
-        <h2 class="highlight-header">All rights Reserved</h2>
-      </div>
+      <h2 class="highlight-header">© Created by Stanley Buenaventura</h2>
+      <h2 class="highlight-header">All rights Reserved</h2>
     </div>
   </footer>
 
@@ -185,5 +166,4 @@
   <script src="js/nav.js"></script>
   <script src="js/gallery.js"></script>
 </body>
-
 </html>
