@@ -64,7 +64,7 @@
             <h2 class="font-a text-color-d right-margin text-right block-header2 font-c portfolio-text">As lead developer for the BYTES club's Risk of Fail, I implemented the core gameplay loop, enemy AI using A* pathfinding, and UI functionalities. I was also tasked with designing some of the levels in the game ensuring a fair layout that promotes replayability through collectibles.</h2>
             <a class="portfolio-view-project highlight-header float-right" href="https://sbsonk.itch.io/rover-i" target="_blank">> View Project</a>
           </div>
-          <img src="images/projects/rover-i.gif" alt="Rover - I">
+          <img src="images/projects/rover-i.gif" alt="Rover - I" onclick="openProject('project-rover-i')">
         </div>
       </div>
       <div class="portfolio-item slide-right">
@@ -74,7 +74,7 @@
           <div class="portfolio-line portfolio-left-margin no-y-margin"></div>
         </div>
         <div class="portfolio-image flex justify-left">
-          <img src="images/projects/boss-fight.gif" alt="Risk of Fail">
+          <img src="images/projects/boss-fight.gif" alt="Risk of Fail" onclick="openProject('project-risk-of-fail')">
           <div>
             <h2 class="left-margin text-left highlight-header font-c">2022 - 2024</h2>
             <h2 class="left-margin text-left highlight-header font-c">Level Designer, Gameplay Programmer</h2>
@@ -98,7 +98,7 @@
             <h2 class="font-a text-color-d right-margin text-right block-header2 font-c portfolio-text">With the theme 'Only 2 Colors,' I helped develop a system for dynamically changing rooms around the player while being pursued by an AI. I also designed the UI, color grading, and room layouts, and modeled props in Blender to enhance the game’s atmosphere.</h2>
             <a class="portfolio-view-project highlight-header float-right" href="https://sbsonk.itch.io/dreams-of-the-past" target="_blank">> View Project</a>
           </div>
-          <img src="images/projects/dreams (2).gif" alt="Dreams of the past.">
+          <img src="images/projects/dreams (2).gif" alt="Dreams of the past." onclick="openProject('project-dreams-of-the-past')">
         </div>
       </div>
       <div class="portfolio-item slide-right">
@@ -108,7 +108,7 @@
           <div class="portfolio-line portfolio-left-margin no-y-margin"></div>
         </div>
         <div class="portfolio-image flex justify-left">
-          <img src="images/projects/XTREME NEO COMBAT.gif" alt="Xtreme Neo Combat">
+          <img src="images/projects/XTREME NEO COMBAT.gif" alt="Xtreme Neo Combat" onclick="openProject('project-xtreme-neo-combat')">
           <div>
             <h2 class="left-margin text-left highlight-header font-c">2023</h2>
             <h2 class="left-margin text-left highlight-header font-c">Game Designer, Gameplay Programmer</h2>
@@ -140,7 +140,7 @@
             <h2 class="font-a text-color-d right-margin text-right block-header2 font-c portfolio-text">A Clinic Management System designed for a small clinic to efficiently manage patients, appointments, staff shifts, and medical inventory. Built with React, Flask, and SQLite3, it integrates key data tables to streamline clinic operations and ensure organized, accessible records for improved workflow.</h2>
             <a class="portfolio-view-project highlight-header float-right" href="https://github.com/SBSonk/Medsync---Clinic-Managment-System" target="_blank">> View Project</a>
           </div>
-          <img src="images/projects/medsync.png" alt="Clinic Management System">
+          <img src="images/projects/medsync.png" alt="Clinic Management System" onclick="openProject('project-clinic-management-system')">
         </div>
       </div>
       <div class="portfolio-item slide-right">
@@ -150,7 +150,7 @@
           <div class="portfolio-line portfolio-left-margin no-y-margin"></div>
         </div>
         <div class="portfolio-image flex justify-left">
-          <img src="images/projects/portfolio-site.png" alt="Portfolio Website">
+          <img src="images/projects/portfolio-site.png" alt="Portfolio Website" onclick="openProject('project-portfolio-website')">
           <div>
             <h2 class="left-margin text-left highlight-header font-c">2024</h2>
             <h2 class="left-margin text-left highlight-header font-c">Web Design, HTML, CSS, JS, SASS</h2>
@@ -174,13 +174,110 @@
             <h2 class="font-a text-color-d right-margin text-right block-header2 font-c portfolio-text">Worked together with a team to design, conceptualize, and develop a new front-end interface for their employee attendance tracker website based on the aesthetics and brand of the company.</h2>
             
           </div>
-          <img src="images/projects/check-in.png" alt="Attendance Tracker">
+          <img src="images/projects/check-in.png" alt="Attendance Tracker" onclick="openProject('project-attendance-tracker')">
         </div>
       </div>
     </div>
     <div class="spacer"></div>
     <div class="spacer"></div>
   </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-rover-i" onclick="closeProject('project-rover-i')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-rover-i')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/rover-i.gif" alt="Rover - I image 1">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-rover-i', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-rover-i', 1)">&#10095;</button>
+            </div>
+            <h2 class="block-header2 font-a text-center">Rover - I</h2>
+          </div>
+        </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-risk-of-fail" onclick="closeProject('project-risk-of-fail')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-risk-of-fail')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/boss-fight.gif" alt="Risk of Fail image 1">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/projects/hallways.gif" alt="Risk of Fail image 2">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-risk-of-fail', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-risk-of-fail', 1)">&#10095;</button>
+            </div>
+            <h2 class="block-header2 font-a text-center">Risk of Fail</h2>
+          </div>
+        </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-dreams-of-the-past" onclick="closeProject('project-dreams-of-the-past')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-dreams-of-the-past')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/dreams (2).gif" alt="Dreams of the past. image 1">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/projects/dreams (1).gif" alt="Dreams of the past. image 2">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-dreams-of-the-past', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-dreams-of-the-past', 1)">&#10095;</button>
+            </div>
+            <h2 class="block-header2 font-a text-center">Dreams of the past.</h2>
+          </div>
+        </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-xtreme-neo-combat" onclick="closeProject('project-xtreme-neo-combat')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-xtreme-neo-combat')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/XTREME NEO COMBAT.gif" alt="Xtreme Neo Combat image 1">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-xtreme-neo-combat', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-xtreme-neo-combat', 1)">&#10095;</button>
+            </div>
+            <h2 class="block-header2 font-a text-center">Xtreme Neo Combat</h2>
+          </div>
+        </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-clinic-management-system" onclick="closeProject('project-clinic-management-system')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-clinic-management-system')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/medsync.png" alt="Clinic Management System image 1">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-clinic-management-system', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-clinic-management-system', 1)">&#10095;</button>
+            </div>
+            <h2 class="block-header2 font-a text-center">Clinic Management System</h2>
+          </div>
+        </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-portfolio-website" onclick="closeProject('project-portfolio-website')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-portfolio-website')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/portfolio-site.png" alt="Portfolio Website image 1">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-portfolio-website', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-portfolio-website', 1)">&#10095;</button>
+            </div>
+            <h2 class="block-header2 font-a text-center">Portfolio Website</h2>
+          </div>
+        </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-attendance-tracker" onclick="closeProject('project-attendance-tracker')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-attendance-tracker')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/check-in.png" alt="Attendance Tracker image 1">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-attendance-tracker', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-attendance-tracker', 1)">&#10095;</button>
+            </div>
+            <h2 class="block-header2 font-a text-center">Attendance Tracker</h2>
+          </div>
+        </div>
   <footer>
     <div class="block center fit flex justify-space-evenly">
       <div>
@@ -219,5 +316,6 @@
   <script src="https://unpkg.com/typeit/dist/index.umd.js"></script>
   <script src="js/index.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/gallery.js"></script>
 </body>
 </html>

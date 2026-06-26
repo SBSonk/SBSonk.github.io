@@ -6,6 +6,9 @@
     "roles": ["Gameplay Programmer"],
     "description": "As lead developer for the BYTES club's Risk of Fail, I implemented the core gameplay loop, enemy AI using A* pathfinding, and UI functionalities. I was also tasked with designing some of the levels in the game ensuring a fair layout that promotes replayability through collectibles.",
     "image": "images/projects/rover-i.gif",
+    "images": [
+      "images/projects/rover-i.gif"
+    ],
     "type": "games",
     "link": "https://sbsonk.itch.io/rover-i"
   },
@@ -16,6 +19,10 @@
     "roles": ["Level Designer", "Gameplay Programmer"],
     "description": "As lead developer for the BYTES club's Risk of Fail, I implemented the core gameplay loop, enemy AI using A* pathfinding, and UI functionalities. I was also tasked with designing some of the levels in the game ensuring a fair layout that promotes replayability through collectibles.",
     "image": "images/projects/boss-fight.gif",
+    "images": [
+      "images/projects/boss-fight.gif",
+      "images/projects/hallways.gif"
+    ],
     "type": "games",
     "link": "https://sbsonk.itch.io/risk-of-fail"
   },
@@ -26,6 +33,10 @@
     "roles": ["3D Artist", "Gameplay Programmer"],
     "description": "With the theme 'Only 2 Colors,' I helped develop a system for dynamically changing rooms around the player while being pursued by an AI. I also designed the UI, color grading, and room layouts, and modeled props in Blender to enhance the game’s atmosphere.",
     "image": "images/projects/dreams (2).gif",
+    "images": [
+      "images/projects/dreams (2).gif",
+      "images/projects/dreams (1).gif"
+    ],
     "type": "games",
     "link": "https://sbsonk.itch.io/dreams-of-the-past"
   },
@@ -36,6 +47,9 @@
     "roles": ["Game Designer", "Gameplay Programmer"],
     "description": "For the game jam themed 'Evolve,' I implemented systems to scale enemy frequency and toughness dynamically and designed a rogue-lite progression system for Xtreme Neo Combat.",
     "image": "images/projects/XTREME NEO COMBAT.gif",
+    "images": [
+      "images/projects/XTREME NEO COMBAT.gif"
+    ],
     "type": "games",
     "link": "https://sbsonk.itch.io/xtreme-neo-combat"
   },
@@ -46,6 +60,9 @@
     "roles": ["Full Stack", "React", "Flask", "SQL"],
     "description": "A Clinic Management System designed for a small clinic to efficiently manage patients, appointments, staff shifts, and medical inventory. Built with React, Flask, and SQLite3, it integrates key data tables to streamline clinic operations and ensure organized, accessible records for improved workflow.",
     "image": "images/projects/medsync.png",
+    "images": [
+      "images/projects/medsync.png"
+    ],
     "type": "web",
     "link": "https://github.com/SBSonk/Medsync---Clinic-Managment-System"
   },
@@ -56,6 +73,9 @@
     "roles": ["Web Design", "HTML", "CSS", "JS", "SASS"],
     "description": "Made in accordance for my finals for my computing class, will also be used as a portfolio website.",
     "image": "images/projects/portfolio-site.png",
+    "images": [
+      "images/projects/portfolio-site.png"
+    ],
     "type": "web"
   },
   {
@@ -65,6 +85,9 @@
     "roles": ["Web Design", "HTML", "CSS", "JS", "Tailwind"],
     "description": "Worked together with a team to design, conceptualize, and develop a new front-end interface for their employee attendance tracker website based on the aesthetics and brand of the company.",
     "image": "images/projects/check-in.png",
+    "images": [
+      "images/projects/check-in.png"
+    ],
     "type": "web"
   }
 ]

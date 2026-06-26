@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Personal Website | Portfolio</title>
+  <title>Personal Website | Gallery</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" href="css/input.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,79 +46,35 @@
     <div class="spacer"></div>
     <div class="block center">
       <h1 class="center fit block-header font-a">gallery.</h1>
-      <h2 class="center fit block-header2 font-a">here are a collection of images displaying some of my projects.</h2>
+      <h2 class="center fit block-header2 font-a">here are a collection of projects from the portfolio.</h2>
       <div class="flex-wrap-gallery center gallery flex justify-space-evenly">
         <div class="gallery-block">
-          <img class="gallery-image" src="images/projects/rover-i.gif" alt="Rover - I screenshot" onclick="ShowGallery('gallery-0')">
-          <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-0">
-            <div class="flex center gallery-view-block">
-              <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-0')">
-              <div class="full center flex flex-flow-column">
-                <img class="center" src="images/projects/rover-i.gif" alt="Rover - I screenshot">
-                <h2 class="block-header2 font-a text-center">Rover - I</h2>
-              </div>
-            </div>
-          </div>
+          <img class="gallery-image" src="images/projects/rover-i.gif" alt="Rover - I" onclick="openProject('project-rover-i')">
+          <h2 class="block-header2 font-a text-center">Rover - I</h2>
         </div>
         <div class="gallery-block">
-          <img class="gallery-image" src="images/projects/hallways.gif" alt="Risk of Fail screenshot 1" onclick="ShowGallery('gallery-1')">
-          <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-1">
-            <div class="flex center gallery-view-block">
-              <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-1')">
-              <div class="full center flex flex-flow-column">
-                <img class="center" src="images/projects/hallways.gif" alt="Risk of Fail screenshot 1">
-                <h2 class="block-header2 font-a text-center">Risk of Fail 1</h2>
-              </div>
-            </div>
-          </div>
+          <img class="gallery-image" src="images/projects/boss-fight.gif" alt="Risk of Fail" onclick="openProject('project-risk-of-fail')">
+          <h2 class="block-header2 font-a text-center">Risk of Fail</h2>
         </div>
         <div class="gallery-block">
-          <img class="gallery-image" src="images/projects/boss-fight.gif" alt="Risk of Fail screenshot 2" onclick="ShowGallery('gallery-2')">
-          <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-2">
-            <div class="flex center gallery-view-block">
-              <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-2')">
-              <div class="full center flex flex-flow-column">
-                <img class="center" src="images/projects/boss-fight.gif" alt="Risk of Fail screenshot 2">
-                <h2 class="block-header2 font-a text-center">Risk of Fail 2</h2>
-              </div>
-            </div>
-          </div>
+          <img class="gallery-image" src="images/projects/dreams (2).gif" alt="Dreams of the past." onclick="openProject('project-dreams-of-the-past')">
+          <h2 class="block-header2 font-a text-center">Dreams of the past.</h2>
         </div>
         <div class="gallery-block">
-          <img class="gallery-image" src="images/projects/dreams (1).gif" alt="Dreams of the Past screenshot 1" onclick="ShowGallery('gallery-3')">
-          <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-3">
-            <div class="flex center gallery-view-block">
-              <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-3')">
-              <div class="full center flex flex-flow-column">
-                <img class="center" src="images/projects/dreams (1).gif" alt="Dreams of the Past screenshot 1">
-                <h2 class="block-header2 font-a text-center">Dreams of the past 1</h2>
-              </div>
-            </div>
-          </div>
+          <img class="gallery-image" src="images/projects/XTREME NEO COMBAT.gif" alt="Xtreme Neo Combat" onclick="openProject('project-xtreme-neo-combat')">
+          <h2 class="block-header2 font-a text-center">Xtreme Neo Combat</h2>
         </div>
         <div class="gallery-block">
-          <img class="gallery-image" src="images/projects/dreams (2).gif" alt="Dreams of the Past screenshot 2" onclick="ShowGallery('gallery-4')">
-          <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-4">
-            <div class="flex center gallery-view-block">
-              <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-4')">
-              <div class="full center flex flex-flow-column">
-                <img class="center" src="images/projects/dreams (2).gif" alt="Dreams of the Past screenshot 2">
-                <h2 class="block-header2 font-a text-center">Dreams of the past 2</h2>
-              </div>
-            </div>
-          </div>
+          <img class="gallery-image" src="images/projects/medsync.png" alt="Clinic Management System" onclick="openProject('project-clinic-management-system')">
+          <h2 class="block-header2 font-a text-center">Clinic Management System</h2>
         </div>
         <div class="gallery-block">
-          <img class="gallery-image" src="images/projects/XTREME NEO COMBAT.gif" alt="Xtreme Neo Combat screenshot" onclick="ShowGallery('gallery-5')">
-          <div class="flex gallery-view gallery-layer gallery-hidden" id="gallery-5">
-            <div class="flex center gallery-view-block">
-              <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('gallery-5')">
-              <div class="full center flex flex-flow-column">
-                <img class="center" src="images/projects/XTREME NEO COMBAT.gif" alt="Xtreme Neo Combat screenshot">
-                <h2 class="block-header2 font-a text-center">Xtreme Neo Combat</h2>
-              </div>
-            </div>
-          </div>
+          <img class="gallery-image" src="images/projects/portfolio-site.png" alt="Portfolio Website" onclick="openProject('project-portfolio-website')">
+          <h2 class="block-header2 font-a text-center">Portfolio Website</h2>
+        </div>
+        <div class="gallery-block">
+          <img class="gallery-image" src="images/projects/check-in.png" alt="Attendance Tracker" onclick="openProject('project-attendance-tracker')">
+          <h2 class="block-header2 font-a text-center">Attendance Tracker</h2>
         </div>
       </div>
     </div>
@@ -126,6 +82,103 @@
     <div class="spacer"></div>
     <div class="spacer"></div>
   </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-rover-i" onclick="closeProject('project-rover-i')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-rover-i')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/rover-i.gif" alt="Rover - I image 1">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-rover-i', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-rover-i', 1)">&#10095;</button>
+            </div>
+            <h2 class="block-header2 font-a text-center">Rover - I</h2>
+          </div>
+        </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-risk-of-fail" onclick="closeProject('project-risk-of-fail')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-risk-of-fail')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/boss-fight.gif" alt="Risk of Fail image 1">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/projects/hallways.gif" alt="Risk of Fail image 2">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-risk-of-fail', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-risk-of-fail', 1)">&#10095;</button>
+            </div>
+            <h2 class="block-header2 font-a text-center">Risk of Fail</h2>
+          </div>
+        </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-dreams-of-the-past" onclick="closeProject('project-dreams-of-the-past')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-dreams-of-the-past')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/dreams (2).gif" alt="Dreams of the past. image 1">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/projects/dreams (1).gif" alt="Dreams of the past. image 2">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-dreams-of-the-past', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-dreams-of-the-past', 1)">&#10095;</button>
+            </div>
+            <h2 class="block-header2 font-a text-center">Dreams of the past.</h2>
+          </div>
+        </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-xtreme-neo-combat" onclick="closeProject('project-xtreme-neo-combat')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-xtreme-neo-combat')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/XTREME NEO COMBAT.gif" alt="Xtreme Neo Combat image 1">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-xtreme-neo-combat', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-xtreme-neo-combat', 1)">&#10095;</button>
+            </div>
+            <h2 class="block-header2 font-a text-center">Xtreme Neo Combat</h2>
+          </div>
+        </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-clinic-management-system" onclick="closeProject('project-clinic-management-system')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-clinic-management-system')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/medsync.png" alt="Clinic Management System image 1">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-clinic-management-system', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-clinic-management-system', 1)">&#10095;</button>
+            </div>
+            <h2 class="block-header2 font-a text-center">Clinic Management System</h2>
+          </div>
+        </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-portfolio-website" onclick="closeProject('project-portfolio-website')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-portfolio-website')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/portfolio-site.png" alt="Portfolio Website image 1">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-portfolio-website', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-portfolio-website', 1)">&#10095;</button>
+            </div>
+            <h2 class="block-header2 font-a text-center">Portfolio Website</h2>
+          </div>
+        </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-attendance-tracker" onclick="closeProject('project-attendance-tracker')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-attendance-tracker')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/check-in.png" alt="Attendance Tracker image 1">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-attendance-tracker', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-attendance-tracker', 1)">&#10095;</button>
+            </div>
+            <h2 class="block-header2 font-a text-center">Attendance Tracker</h2>
+          </div>
+        </div>
   <footer>
     <div class="block center fit flex justify-space-evenly">
       <div>

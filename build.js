@@ -146,28 +146,48 @@ ${createFooter()}
 `;
 }
 
-function createGalleryPage(items) {
-  const galleryItems = items.map(item => `        <div class="gallery-block">
-          <img class="gallery-image" src="${item.image}" alt="${item.alt}" onclick="ShowGallery('${item.id}')">
-          <div class="flex gallery-view gallery-layer gallery-hidden" id="${item.id}">
-            <div class="flex center gallery-view-block">
-              <img class="gallery-back-button" src="images/close.png" alt="back" onclick="HideGallery('${item.id}')">
-              <div class="full center flex flex-flow-column">
-                <img class="center" src="${item.image}" alt="${item.alt}">
-                <h2 class="block-header2 font-a text-center">${item.title}</h2>
-              </div>
-            </div>
-          </div>
-        </div>`).join('\r\n');
+function getPrimaryImage(item) {
+  return Array.isArray(item.images) && item.images.length > 0 ? item.images[0] : item.image;
+}
 
-  return `${createHead('Personal Website | Portfolio')}
+function createProjectOverlay(item) {
+  const images = Array.isArray(item.images) && item.images.length > 0 ? item.images : [item.image];
+  const slides = images.map((image, idx) => `            <div class="carousel-slide${idx === 0 ? ' active' : ''}">
+              <img src="${image}" alt="${item.title} image ${idx + 1}">
+            </div>`).join('\r\n');
+
+  return `        <div class="gallery-view gallery-layer gallery-hidden" id="project-${item.slug}" onclick="closeProject('project-${item.slug}')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-${item.slug}')">×</button>
+            <div class="carousel-container">
+${slides}
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-${item.slug}', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-${item.slug}', 1)">&#10095;</button>
+            </div>
+            <h2 class="block-header2 font-a text-center">${item.title}</h2>
+          </div>
+        </div>`;
+}
+
+function createGalleryPage(items) {
+  const galleryItems = items.map(item => {
+    const thumb = getPrimaryImage(item);
+    return `        <div class="gallery-block">
+          <img class="gallery-image" src="${thumb}" alt="${item.title}" onclick="openProject('project-${item.slug}')">
+          <h2 class="block-header2 font-a text-center">${item.title}</h2>
+        </div>`;
+  }).join('\r\n');
+
+  const overlays = items.map(item => createProjectOverlay(item)).join('\r\n');
+
+  return `${createHead('Personal Website | Gallery')}
 ${createNav()}
   <div id="content">
     <div class="spacer"></div>
     <div class="spacer"></div>
     <div class="block center">
       <h1 class="center fit block-header font-a">gallery.</h1>
-      <h2 class="center fit block-header2 font-a">here are a collection of images displaying some of my projects.</h2>
+      <h2 class="center fit block-header2 font-a">here are a collection of projects from the portfolio.</h2>
       <div class="flex-wrap-gallery center gallery flex justify-space-evenly">
 ${galleryItems}
       </div>
@@ -176,6 +196,7 @@ ${galleryItems}
     <div class="spacer"></div>
     <div class="spacer"></div>
   </div>
+${overlays}
 ${createFooter()}
   <!--Scripts-->
   <script src="https://unpkg.com/typeit/dist/index.umd.js"></script>
@@ -187,32 +208,37 @@ ${createFooter()}
 `;
 }
 
-function createPortfolioPage(items) {
-  const games = items.filter(item => item.type === 'games');
-  const web = items.filter(item => item.type === 'web');
-  const renderItems = sectionItems => sectionItems.map((item, idx) => {
-    const layout = idx % 2 === 0 ? 'slide-left' : 'slide-right';
-    const justifyClass = idx % 2 === 0 ? 'justify-right' : 'justify-left';
-    const lineClass = idx % 2 === 0 ? 'portfolio-right-margin' : 'portfolio-left-margin';
-    const linkHtml = item.link ? `<a class="portfolio-view-project highlight-header ${idx % 2 === 0 ? 'float-right' : ''}" href="${item.link}" target="_blank">> View Project</a>` : '';
-    return `      <div class="portfolio-item ${layout}">
+function createPortfolioCard(item, idx) {
+  const thumb = getPrimaryImage(item);
+  const layout = idx % 2 === 0 ? 'slide-left' : 'slide-right';
+  const justifyClass = idx % 2 === 0 ? 'justify-right' : 'justify-left';
+  const lineClass = idx % 2 === 0 ? 'portfolio-right-margin' : 'portfolio-left-margin';
+  const linkHtml = item.link ? `<a class="portfolio-view-project highlight-header ${idx % 2 === 0 ? 'float-right' : ''}" href="${item.link}" target="_blank">> View Project</a>` : '';
+  return `      <div class="portfolio-item ${layout}">
         <div class="flex inline">
           ${idx % 2 === 0 ? `<div class="portfolio-line ${lineClass} no-y-margin"></div>` : ''}
           <h1 class="portfolio-header font-b lower-case no-y-margin">${item.title}</h1>
           ${idx % 2 !== 0 ? `<div class="portfolio-line ${lineClass} no-y-margin"></div>` : ''}
         </div>
         <div class="portfolio-image flex ${justifyClass}">
-          ${idx % 2 !== 0 ? `<img src="${item.image}" alt="${item.title}">` : ''}
+          ${idx % 2 !== 0 ? `<img src="${thumb}" alt="${item.title}" onclick="openProject('project-${item.slug}')">` : ''}
           <div>
             <h2 class="${idx % 2 === 0 ? 'right-margin text-right' : 'left-margin text-left'} highlight-header font-c">${item.year}</h2>
             <h2 class="${idx % 2 === 0 ? 'right-margin text-right' : 'left-margin text-left'} highlight-header font-c">${item.roles.join(', ')}</h2>
             <h2 class="font-a text-color-d ${idx % 2 === 0 ? 'right-margin text-right' : 'left-margin text-left'} block-header2 font-c portfolio-text">${item.description}</h2>
             ${linkHtml}
           </div>
-          ${idx % 2 === 0 ? `<img src="${item.image}" alt="${item.title}">` : ''}
+          ${idx % 2 === 0 ? `<img src="${thumb}" alt="${item.title}" onclick="openProject('project-${item.slug}')">` : ''}
         </div>
       </div>`;
-  }).join('\r\n');
+}
+
+function createPortfolioPage(items) {
+  const games = items.filter(item => item.type === 'games');
+  const web = items.filter(item => item.type === 'web');
+  const gamesHtml = games.map((item, idx) => createPortfolioCard(item, idx)).join('\r\n');
+  const webHtml = web.map((item, idx) => createPortfolioCard(item, idx)).join('\r\n');
+  const overlays = items.map(item => createProjectOverlay(item)).join('\r\n');
 
   return `${createHead('Personal Website | Portfolio')}
 ${createNav()}
@@ -225,7 +251,7 @@ ${createNav()}
     </div>
     <div class="spacer"></div>
     <div class="block center portfolio-div">
-${renderItems(games)}
+${gamesHtml}
     </div>
     <div class="spacer"></div>
     <div class="block fit center">
@@ -234,16 +260,18 @@ ${renderItems(games)}
     </div>
     <div class="spacer"></div>
     <div class="block center portfolio-div">
-${renderItems(web)}
+${webHtml}
     </div>
     <div class="spacer"></div>
     <div class="spacer"></div>
   </div>
+${overlays}
 ${createFooter()}
   <!--Scripts-->
   <script src="https://unpkg.com/typeit/dist/index.umd.js"></script>
   <script src="js/index.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/gallery.js"></script>
 </body>
 </html>
 `;
@@ -294,11 +322,10 @@ function ensureOutputDirectories() {
 }
 
 function generate() {
-  const galleryData = readJSON('gallery.json');
   const portfolioData = readJSON('portfolio.json');
   const workHistoryData = readJSON('work-history.json');
 
-  const galleryHtml = createGalleryPage(galleryData);
+  const galleryHtml = createGalleryPage(portfolioData);
   const portfolioHtml = createPortfolioPage(portfolioData);
   const workHistoryHtml = createWorkHistoryPage(workHistoryData);
 
