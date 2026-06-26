@@ -22,7 +22,7 @@
     "roles": ["Game Designer, Gameplay Programmer"],
     "awards": [],
     "description": "Welcome to the high-pressure world of the fruit-tech stock market! In Day Trading Simulator, you start with a modest $150 and a dream of becoming a market tycoon. Trade shares in the industry's biggest (and riskiest) players: `Lemon Inc`, `Mango Ltd`, and `Banana Corp`.",
-    "developerNotes": "Built in C++ using the raylib library, I implemented a approximation of a day trading market using a differing layers of perlin noise, random noise, white noise, etc. With those layers set in place, we are able to form a close approximation of the day trading experience by adjust different parameters and implementing random events such as a volatile week, sudden rise and falls by changing the type of noise being used in the current market.",
+    "developerNotes": "Built in C++ using the raylib library, I implemented a approximation of a day trading market using differing layers of perlin noise, random noise, white noise, etc. With those layers set in place, we are able to form a close approximation of the day trading experience by adjust different parameters and implementing random events such as a volatile week, sudden rise and falls by changing the type of noise being used in the current market.",
     "image": "images/projects/daytradingsimulator-logo.png",
     "images": [
       "images/projects/daytradingsimulator-logo.png",
