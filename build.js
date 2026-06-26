@@ -208,16 +208,64 @@ ${createFooter()}
 `;
 }
 
+function formatStatusLabel(status) {
+  if (!status) {
+    return '';
+  }
+
+  const normalized = status.toLowerCase();
+  if (normalized === 'finished' || normalized === 'released') {
+    return 'Finished';
+  }
+  if (normalized === 'prototype') {
+    return 'Prototype';
+  }
+  if (normalized === 'in active development' || normalized === 'active') {
+    return 'In Active Development';
+  }
+  return status;
+}
+
+function getStatusClass(status) {
+  const normalized = status ? status.toLowerCase() : '';
+  if (normalized === 'finished' || normalized === 'released') {
+    return 'status-finished';
+  }
+  if (normalized === 'prototype') {
+    return 'status-prototype';
+  }
+  if (normalized === 'in active development' || normalized === 'active') {
+    return 'status-active';
+  }
+  return 'status-prototype';
+}
+
+function createStatusBadges(item) {
+  const badges = [];
+  if (item.status) {
+    const label = formatStatusLabel(item.status);
+    badges.push(`<span class="portfolio-status ${getStatusClass(item.status)}">${label}</span>`);
+  }
+  if (item.downloadable) {
+    badges.push('<span class="portfolio-status status-downloadable">Downloadable</span>');
+  }
+  return badges.length > 0 ? `<div class="portfolio-status-row">${badges.join('')}</div>` : '';
+}
+
 function createPortfolioCard(item, idx) {
   const thumb = getPrimaryImage(item);
   const layout = idx % 2 === 0 ? 'slide-left' : 'slide-right';
   const justifyClass = idx % 2 === 0 ? 'justify-right' : 'justify-left';
   const lineClass = idx % 2 === 0 ? 'portfolio-right-margin' : 'portfolio-left-margin';
   const linkHtml = item.link ? `<a class="portfolio-view-project highlight-header ${idx % 2 === 0 ? 'float-right' : ''}" href="${item.link}" target="_blank">> View Project</a>` : '';
+  const statusBadges = createStatusBadges(item);
   return `      <div class="portfolio-item ${layout}">
-        <div class="flex inline">
+        <div class="flex inline portfolio-heading">
           ${idx % 2 === 0 ? `<div class="portfolio-line ${lineClass} no-y-margin"></div>` : ''}
-          <h1 class="portfolio-header font-b lower-case no-y-margin">${item.title}</h1>
+          <div class="portfolio-title-row">
+            <h1 class="portfolio-header font-b lower-case no-y-margin">${item.title}</h1>
+            ${statusBadges}
+          </div>
           ${idx % 2 !== 0 ? `<div class="portfolio-line ${lineClass} no-y-margin"></div>` : ''}
         </div>
         <div class="portfolio-image flex ${justifyClass}">

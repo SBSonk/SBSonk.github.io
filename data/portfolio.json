@@ -10,7 +10,9 @@
       "images/projects/rover-i.gif"
     ],
     "type": "games",
-    "link": "https://sbsonk.itch.io/rover-i"
+    "link": "https://sbsonk.itch.io/rover-i",
+    "status": "Prototype",
+    "downloadable": true
   },
   {
     "slug": "risk-of-fail",
@@ -24,7 +26,9 @@
       "images/projects/hallways.gif"
     ],
     "type": "games",
-    "link": "https://sbsonk.itch.io/risk-of-fail"
+    "link": "https://sbsonk.itch.io/risk-of-fail",
+    "status": "Finished",
+    "downloadable": true
   },
   {
     "slug": "dreams-of-the-past",
@@ -38,7 +42,9 @@
       "images/projects/dreams (1).gif"
     ],
     "type": "games",
-    "link": "https://sbsonk.itch.io/dreams-of-the-past"
+    "link": "https://sbsonk.itch.io/dreams-of-the-past",
+    "status": "Prototype",
+    "downloadable": true
   },
   {
     "slug": "xtreme-neo-combat",
@@ -51,7 +57,9 @@
       "images/projects/XTREME NEO COMBAT.gif"
     ],
     "type": "games",
-    "link": "https://sbsonk.itch.io/xtreme-neo-combat"
+    "link": "https://sbsonk.itch.io/xtreme-neo-combat",
+    "status": "Prototype",
+    "downloadable": true
   },
   {
     "slug": "clinic-management-system",
@@ -64,7 +72,9 @@
       "images/projects/medsync.png"
     ],
     "type": "web",
-    "link": "https://github.com/SBSonk/Medsync---Clinic-Managment-System"
+    "link": "https://github.com/SBSonk/Medsync---Clinic-Managment-System",
+    "status": "In Active Development",
+    "downloadable": false
   },
   {
     "slug": "portfolio-website",
@@ -76,7 +86,9 @@
     "images": [
       "images/projects/portfolio-site.png"
     ],
-    "type": "web"
+    "type": "web",
+    "status": "Finished",
+    "downloadable": false
   },
   {
     "slug": "attendance-tracker",
@@ -88,6 +100,8 @@
     "images": [
       "images/projects/check-in.png"
     ],
-    "type": "web"
+    "type": "web",
+    "status": "Finished",
+    "downloadable": false
   }
 ]
