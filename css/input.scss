@@ -1,6 +1,7 @@
 $lightA: #e4d8ff;
 $lightB: #B18fcf;
 $midtone: #9984D4;
+$midnightBlue: #100068;
 $darkA: #494850;
 $darkB: #2C2C34;
 $darkC: #fef4ff;
@@ -988,15 +989,21 @@ footer .block {
     margin: auto 30px auto auto;
 }
 
+/* 1. Center the entire overlay on the screen */
 .gallery-view {
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
     position: fixed;
-    background-color: transparentize($color: $darkA, $amount: .6);
-
+    background-color: transparentize($darkA, .6);
     transition: all .25s;
+
+    /* ADDED: Flex properties to center the modal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
 }
 
 .gallery-hidden {
@@ -1008,33 +1015,43 @@ footer .block {
     z-index: 20;
 }
 
+/* 2. Resize the modal block so it's not massive */
 .gallery-view-block {
-    width: 60%;
-    height: 60%;
+    width: auto;
+    min-width: 40vw;
+    max-width: 80vw;
+    height: auto;
+    max-height: 90vh;
+    
     border-radius: 25px;
     background-color: $darkD;
-
-    padding: 25px;
+    
+    /* Added top padding so the close button doesn't overlap the image */
+    padding: 45px 30px 20px 30px; 
     box-shadow: 0px 10px 15px 5px rgb(0, 0, 0, 0.2);
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the carousel horizontally */
 }
 
+/* 3. Position the close button nicely in the corner */
 .gallery-back-button {
-    position:absolute;
-
-    width: 15px;
-    height: 15px;
+    position: absolute;
+    top: 15px;
+    right: 20px; 
+    
+    width: 25px;
+    height: 25px;
+    font-size: 24px;
+    line-height: 1;
+    border: none;
+    background: none;
+    color: $textC;
 
     filter: grayscale(1);
-    transform: scale(1);
-
     transition: all .25s;
-
-    transform-origin: center;
-}
-
-.gallery-back-button:hover {
-    transform: scale(1.2);
-    filter: grayscale(0);
     cursor: pointer;
 }
 
@@ -1098,7 +1115,7 @@ footer .block {
     object-fit:contain;
 }
 
-.portfolio-image div{
+.portfolio-container {
     margin-right: 30px;
     margin-left: 30px;
 
@@ -1132,7 +1149,7 @@ footer .block {
 }
 
 .portfolio-text {
-    height: 145px
+    height: fit-content
 }
 
 .right-margin {
@@ -1188,4 +1205,179 @@ footer .block {
 .technology-container > img {
     margin: auto;
     width: 10vw;
+}
+
+/* Portfolio Status Tags */
+.portfolio-title-row {
+    display: flex;
+    align-items: baseline; /* Aligns header and tags along the same text line */
+    gap: 15px;             /* Adds space between the header and the tags */
+    flex-wrap: wrap;       /* Allows wrapping if the screen is too narrow */
+}
+
+/* Ensure the status row stays inline */
+.portfolio-status-row {
+    display: inline-flex;
+    gap: 5px;
+}
+
+.portfolio-status {
+    display: inline-block;
+    padding: 2px 10px;
+    margin-right: 5px;
+    border-radius: 15px;
+    font-family: "Cairo", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-finished {
+    background-color: $lightA;
+    color: $textB;
+}
+
+.status-prototype {
+    background-color: $midtone;
+    color: white;
+}
+
+.status-downloadable {
+    background-color: $darkA;
+    color: white;
+}
+
+.status-source {
+    background-color: $textD;
+    color: white;
+}
+
+/* Awards Section */
+.portfolio-awards {
+    margin: 0;
+    margin-top: 4px;
+}
+
+.portfolio-award-pill {
+    background-color: $textB; /* Optional: adjust to match your color palette */
+    color: $darkC;
+    border: 1px solid $midnightBlue;
+    border-radius: 25px;
+    margin: 0;
+    padding: 0px 12px;
+    font-family: "Cairo", sans-serif;
+    font-size: 16px;
+}
+
+/* Alignment containers */
+.portfolio-awards-right {
+    text-align: right;
+}
+
+.portfolio-awards-left {
+    text-align: left;
+}
+
+/* Carousel Container & Slides */
+.carousel-container {
+    position: relative; /* Essential for absolute positioning of buttons */
+    height: 70%;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.carousel-slide {
+    display: none; /* Hide all slides by default */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    animation: page-show 0.5s; /* Optional: adds a nice fade/slide in */
+}
+
+.carousel-slide.active {
+    display: flex; /* Only show the slide with the 'active' class */
+}
+
+.carousel-slide img {
+    max-height: 60vh;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Carousel Navigation Buttons */
+.carousel-container {
+    position: relative; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.carousel-slide {
+    display: none; /* Hides inactive slides */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    animation: page-show 0.25s ease-out;
+}
+
+.carousel-slide.active {
+    display: flex; /* Reveals only the active slide */
+}
+
+.carousel-slide img {
+    max-height: 60vh; /* Restricts the image height relative to screen */
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0px 10px 15px 5px rgb(0, 0, 0, 0.2); /* Matches your existing image aesthetic */
+}
+
+/* Navigation Buttons */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    background-color: transparentize($darkB, 0.3); 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: all 0.25s;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background-color: $textB;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+/* Portfolio Description & Notes Separator */
+.portfolio-note-separator {
+    height: 2px;
+    width: 60px; /* Adjust width as needed */
+    background-color: transparentize($textA, 0.8);
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Helper classes to maintain alignment in the alternating layout */
+.margin-left-auto {
+    margin-left: auto;
+}
+
+.margin-right-auto {
+    margin-right: auto;
 }

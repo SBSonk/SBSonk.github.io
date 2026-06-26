@@ -151,10 +151,16 @@ function getPrimaryImage(item) {
 }
 
 function createProjectOverlay(item) {
-  const images = Array.isArray(item.images) && item.images.length > 0 ? item.images : [item.image];
+  // Gracefully handle missing images
+  const images = Array.isArray(item.images) && item.images.length > 0 ? item.images : (item.image ? [item.image] : []);
+  
+  // If there are no images, do not generate an overlay
+  if (images.length === 0) return '';
+
   const slides = images.map((image, idx) => `            <div class="carousel-slide${idx === 0 ? ' active' : ''}">
               <img src="${image}" alt="${item.title} image ${idx + 1}">
             </div>`).join('\r\n');
+  const awardsHtml = createAwardsMarkup(item, 'text-center', 'justify-center');
 
   return `        <div class="gallery-view gallery-layer gallery-hidden" id="project-${item.slug}" onclick="closeProject('project-${item.slug}')">
           <div class="gallery-view-block" onclick="event.stopPropagation()">
@@ -164,13 +170,20 @@ ${slides}
               <button class="carousel-button carousel-prev" onclick="changeSlide('project-${item.slug}', -1)">&#10094;</button>
               <button class="carousel-button carousel-next" onclick="changeSlide('project-${item.slug}', 1)">&#10095;</button>
             </div>
+            ${awardsHtml ? `<div class="gallery-awards">${awardsHtml}</div>` : ''}
             <h2 class="block-header2 font-a text-center">${item.title}</h2>
           </div>
         </div>`;
 }
 
 function createGalleryPage(items) {
-  const galleryItems = items.map(item => {
+  // Filter out items that do not have an image
+  const itemsWithImages = items.filter(item => {
+    const thumb = getPrimaryImage(item);
+    return thumb && thumb.trim() !== '';
+  });
+
+  const galleryItems = itemsWithImages.map(item => {
     const thumb = getPrimaryImage(item);
     return `        <div class="gallery-block">
           <img class="gallery-image" src="${thumb}" alt="${item.title}" onclick="openProject('project-${item.slug}')">
@@ -178,7 +191,7 @@ function createGalleryPage(items) {
         </div>`;
   }).join('\r\n');
 
-  const overlays = items.map(item => createProjectOverlay(item)).join('\r\n');
+  const overlays = itemsWithImages.map(item => createProjectOverlay(item)).join('\r\n');
 
   return `${createHead('Personal Website | Gallery')}
 ${createNav()}
@@ -249,16 +262,60 @@ function createStatusBadges(item) {
   if (item.downloadable) {
     badges.push('<span class="portfolio-status status-downloadable">Downloadable</span>');
   }
+  if (item.publicSourceCode) {
+    badges.push('<span class="portfolio-status status-source">Public Source Code</span>');
+  }
   return badges.length > 0 ? `<div class="portfolio-status-row">${badges.join('')}</div>` : '';
+}
+
+function createAwardsMarkup(item, alignClass = 'right-margin text-right', justifyClass = 'justify-right') {
+  const awards = Array.isArray(item.awards)
+    ? item.awards.filter(Boolean)
+    : item.awards
+      ? [item.awards]
+      : [];
+
+  if (awards.length === 0) {
+    return '';
+  }
+
+  const awardPills = awards.map(award => `<span class="portfolio-award-pill">${award}</span>`).join('');
+  
+  // By moving the <h2> outside of the flex container, it will perfectly 
+  // obey the left/right text alignments just like the other headers.
+  return `
+    <h2 class="${alignClass} highlight-header font-c">Awards</h2>
+    <div class="flex ${justifyClass}" style="align-items: center; gap: 10px; margin-bottom: 10px;">
+      ${awardPills}
+    </div>`;
 }
 
 function createPortfolioCard(item, idx) {
   const thumb = getPrimaryImage(item);
+  const hasImage = thumb && thumb.trim() !== ''; 
   const layout = idx % 2 === 0 ? 'slide-left' : 'slide-right';
-  const justifyClass = idx % 2 === 0 ? 'justify-right' : 'justify-left';
+  
+  // Set up the alternating alignment variables
+  const justifyClass = idx % 2 === 0 ? 'justify-right' : ''; 
   const lineClass = idx % 2 === 0 ? 'portfolio-right-margin' : 'portfolio-left-margin';
+  const alignClass = idx % 2 === 0 ? 'right-margin text-right' : 'left-margin text-left';
+  
   const linkHtml = item.link ? `<a class="portfolio-view-project highlight-header ${idx % 2 === 0 ? 'float-right' : ''}" href="${item.link}" target="_blank">> View Project</a>` : '';
   const statusBadges = createStatusBadges(item);
+  
+  // Pass the alignment variables into the awards markup
+  const awardsHtml = createAwardsMarkup(item, alignClass, justifyClass);
+  
+  const imgTag = hasImage ? `<img src="${thumb}" alt="${item.title}" onclick="openProject('project-${item.slug}')">` : '';
+
+  const descHtml = item.description ? `<h2 class="font-a text-color-d ${alignClass} block-header2 font-c portfolio-text">${item.description}</h2>` : '';
+  
+  const notesHtml = item.developerNotes ? `
+    <div class="portfolio-note-separator ${idx % 2 === 0 ? 'margin-left-auto' : 'margin-right-auto'}"></div>
+    <h2 class="${alignClass} highlight-header font-c">Project Notes</h2>
+    <h2 class="font-a text-color-d ${alignClass} block-header2 font-c portfolio-text">${item.developerNotes}</h2>
+  ` : '';
+
   return `      <div class="portfolio-item ${layout}">
         <div class="flex inline portfolio-heading">
           ${idx % 2 === 0 ? `<div class="portfolio-line ${lineClass} no-y-margin"></div>` : ''}
@@ -269,14 +326,16 @@ function createPortfolioCard(item, idx) {
           ${idx % 2 !== 0 ? `<div class="portfolio-line ${lineClass} no-y-margin"></div>` : ''}
         </div>
         <div class="portfolio-image flex ${justifyClass}">
-          ${idx % 2 !== 0 ? `<img src="${thumb}" alt="${item.title}" onclick="openProject('project-${item.slug}')">` : ''}
-          <div>
-            <h2 class="${idx % 2 === 0 ? 'right-margin text-right' : 'left-margin text-left'} highlight-header font-c">${item.year}</h2>
-            <h2 class="${idx % 2 === 0 ? 'right-margin text-right' : 'left-margin text-left'} highlight-header font-c">${item.roles.join(', ')}</h2>
-            <h2 class="font-a text-color-d ${idx % 2 === 0 ? 'right-margin text-right' : 'left-margin text-left'} block-header2 font-c portfolio-text">${item.description}</h2>
+          ${idx % 2 !== 0 ? imgTag : ''}
+          <div class="portfolio-container">
+            <h2 class="${alignClass} highlight-header font-c">${item.year}</h2>
+            <h2 class="${alignClass} highlight-header font-c">${item.roles.join(', ')}</h2>
+            ${descHtml}
+            ${notesHtml}
+            ${awardsHtml}
             ${linkHtml}
           </div>
-          ${idx % 2 === 0 ? `<img src="${thumb}" alt="${item.title}" onclick="openProject('project-${item.slug}')">` : ''}
+          ${idx % 2 === 0 ? imgTag : ''}
         </div>
       </div>`;
 }
@@ -328,6 +387,17 @@ ${createFooter()}
 function createProjectPage(item) {
   const rolesHtml = item.roles.map(role => `<li>${role}</li>`).join('');
   const linkHtml = item.link ? `<a class="portfolio-view-project highlight-header" href="${item.link}" target="_blank">> View Project</a>` : '';
+  
+  // Always set to right-aligned for the dedicated project pages
+  const awardsHtml = createAwardsMarkup(item, 'right-margin text-right', 'justify-right');
+  
+  const descHtml = item.description ? `<h2 class="font-a text-color-d right-margin text-right block-header2 font-c portfolio-text">${item.description}</h2>` : '';
+  const notesHtml = item.developerNotes ? `
+    <div class="portfolio-note-separator margin-left-auto"></div>
+    <h2 class="right-margin text-right highlight-header font-c">Developer Notes</h2>
+    <h2 class="font-a text-color-d right-margin text-right block-header2 font-c portfolio-text">${item.developerNotes}</h2>
+  ` : '';
+
   return `${createHead(`${item.title} | Portfolio`)}
 ${createNav()}
   <div id="content">
@@ -343,9 +413,11 @@ ${createNav()}
           <div>
             <h2 class="right-margin text-right highlight-header font-c">${item.year}</h2>
             <h2 class="right-margin text-right highlight-header font-c">${item.roles.join(', ')}</h2>
-            <h2 class="font-a text-color-d right-margin text-right block-header2 font-c portfolio-text">${item.description}</h2>
+            ${descHtml}
+            ${notesHtml}
+            ${awardsHtml}
             ${linkHtml}
-            <a class="portfolio-view-project highlight-header" href="../portfolio.html">> Back to Portfolio</a>
+            <a class="portfolio-view-project highlight-header" style="clear: both; display: block; margin-top: 10px;" href="../portfolio.html">> Back to Portfolio</a>
           </div>
           <img src="${item.image}" alt="${item.title}">
         </div>

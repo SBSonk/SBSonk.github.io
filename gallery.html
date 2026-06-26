@@ -49,6 +49,14 @@
       <h2 class="center fit block-header2 font-a">here are a collection of projects from the portfolio.</h2>
       <div class="flex-wrap-gallery center gallery flex justify-space-evenly">
         <div class="gallery-block">
+          <img class="gallery-image" src="images/projects/daytradingsimulator-logo.png" alt="Day Trading Simulator" onclick="openProject('project-day-trading-simulator')">
+          <h2 class="block-header2 font-a text-center">Day Trading Simulator</h2>
+        </div>
+        <div class="gallery-block">
+          <img class="gallery-image" src="images/projects/retallica-gif-2.gif" alt="Retallica" onclick="openProject('project-retallica')">
+          <h2 class="block-header2 font-a text-center">Retallica</h2>
+        </div>
+        <div class="gallery-block">
           <img class="gallery-image" src="images/projects/rover-i.gif" alt="Rover - I" onclick="openProject('project-rover-i')">
           <h2 class="block-header2 font-a text-center">Rover - I</h2>
         </div>
@@ -63,6 +71,10 @@
         <div class="gallery-block">
           <img class="gallery-image" src="images/projects/XTREME NEO COMBAT.gif" alt="Xtreme Neo Combat" onclick="openProject('project-xtreme-neo-combat')">
           <h2 class="block-header2 font-a text-center">Xtreme Neo Combat</h2>
+        </div>
+        <div class="gallery-block">
+          <img class="gallery-image" src="images/projects/keep-going-1.png" alt="Let's Keep Going" onclick="openProject('project-lets-keep-going')">
+          <h2 class="block-header2 font-a text-center">Let's Keep Going</h2>
         </div>
         <div class="gallery-block">
           <img class="gallery-image" src="images/projects/medsync.png" alt="Clinic Management System" onclick="openProject('project-clinic-management-system')">
@@ -82,6 +94,56 @@
     <div class="spacer"></div>
     <div class="spacer"></div>
   </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-day-trading-simulator" onclick="closeProject('project-day-trading-simulator')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-day-trading-simulator')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/daytradingsimulator-logo.png" alt="Day Trading Simulator image 1">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/projects/daytradingsimulator-1.png" alt="Day Trading Simulator image 2">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/projects/daytradingsimulator-2.png" alt="Day Trading Simulator image 3">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/projects/daytradingsimulator-3.png" alt="Day Trading Simulator image 4">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-day-trading-simulator', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-day-trading-simulator', 1)">&#10095;</button>
+            </div>
+            
+            <h2 class="block-header2 font-a text-center">Day Trading Simulator</h2>
+          </div>
+        </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-retallica" onclick="closeProject('project-retallica')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-retallica')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/retallica-gif-2.gif" alt="Retallica image 1">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/projects/rettalica-gif-1.gif" alt="Retallica image 2">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/projects/rettalica-1.png" alt="Retallica image 3">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/projects/rettalica-1.png" alt="Retallica image 4">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-retallica', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-retallica', 1)">&#10095;</button>
+            </div>
+            <div class="gallery-awards">
+    <h2 class="text-center highlight-header font-c">Awards</h2>
+    <div class="flex justify-center" style="align-items: center; gap: 10px; margin-bottom: 10px;">
+      <span class="portfolio-award-pill">Jury's Choice for Game Jam+ 2025</span>
+    </div></div>
+            <h2 class="block-header2 font-a text-center">Retallica</h2>
+          </div>
+        </div>
         <div class="gallery-view gallery-layer gallery-hidden" id="project-rover-i" onclick="closeProject('project-rover-i')">
           <div class="gallery-view-block" onclick="event.stopPropagation()">
             <button class="gallery-back-button" type="button" onclick="closeProject('project-rover-i')">×</button>
@@ -92,6 +154,11 @@
               <button class="carousel-button carousel-prev" onclick="changeSlide('project-rover-i', -1)">&#10094;</button>
               <button class="carousel-button carousel-next" onclick="changeSlide('project-rover-i', 1)">&#10095;</button>
             </div>
+            <div class="gallery-awards">
+    <h2 class="text-center highlight-header font-c">Awards</h2>
+    <div class="flex justify-center" style="align-items: center; gap: 10px; margin-bottom: 10px;">
+      <span class="portfolio-award-pill">#3 Innovation for Global Game Jam 2025 @ CIIT Interweave</span>
+    </div></div>
             <h2 class="block-header2 font-a text-center">Rover - I</h2>
           </div>
         </div>
@@ -108,6 +175,7 @@
               <button class="carousel-button carousel-prev" onclick="changeSlide('project-risk-of-fail', -1)">&#10094;</button>
               <button class="carousel-button carousel-next" onclick="changeSlide('project-risk-of-fail', 1)">&#10095;</button>
             </div>
+            
             <h2 class="block-header2 font-a text-center">Risk of Fail</h2>
           </div>
         </div>
@@ -124,6 +192,11 @@
               <button class="carousel-button carousel-prev" onclick="changeSlide('project-dreams-of-the-past', -1)">&#10094;</button>
               <button class="carousel-button carousel-next" onclick="changeSlide('project-dreams-of-the-past', 1)">&#10095;</button>
             </div>
+            <div class="gallery-awards">
+    <h2 class="text-center highlight-header font-c">Awards</h2>
+    <div class="flex justify-center" style="align-items: center; gap: 10px; margin-bottom: 10px;">
+      <span class="portfolio-award-pill">#7 Presentation for Quad Jam #7</span>
+    </div></div>
             <h2 class="block-header2 font-a text-center">Dreams of the past.</h2>
           </div>
         </div>
@@ -137,7 +210,32 @@
               <button class="carousel-button carousel-prev" onclick="changeSlide('project-xtreme-neo-combat', -1)">&#10094;</button>
               <button class="carousel-button carousel-next" onclick="changeSlide('project-xtreme-neo-combat', 1)">&#10095;</button>
             </div>
+            <div class="gallery-awards">
+    <h2 class="text-center highlight-header font-c">Awards</h2>
+    <div class="flex justify-center" style="align-items: center; gap: 10px; margin-bottom: 10px;">
+      <span class="portfolio-award-pill">#6 Gameplay for ScoreSpace Jam #24</span>
+    </div></div>
             <h2 class="block-header2 font-a text-center">Xtreme Neo Combat</h2>
+          </div>
+        </div>
+        <div class="gallery-view gallery-layer gallery-hidden" id="project-lets-keep-going" onclick="closeProject('project-lets-keep-going')">
+          <div class="gallery-view-block" onclick="event.stopPropagation()">
+            <button class="gallery-back-button" type="button" onclick="closeProject('project-lets-keep-going')">×</button>
+            <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img src="images/projects/keep-going-1.png" alt="Let's Keep Going image 1">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/projects/keep-going-2.png" alt="Let's Keep Going image 2">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/projects/keep-going-3.png" alt="Let's Keep Going image 3">
+            </div>
+              <button class="carousel-button carousel-prev" onclick="changeSlide('project-lets-keep-going', -1)">&#10094;</button>
+              <button class="carousel-button carousel-next" onclick="changeSlide('project-lets-keep-going', 1)">&#10095;</button>
+            </div>
+            
+            <h2 class="block-header2 font-a text-center">Let's Keep Going</h2>
           </div>
         </div>
         <div class="gallery-view gallery-layer gallery-hidden" id="project-clinic-management-system" onclick="closeProject('project-clinic-management-system')">
@@ -150,6 +248,7 @@
               <button class="carousel-button carousel-prev" onclick="changeSlide('project-clinic-management-system', -1)">&#10094;</button>
               <button class="carousel-button carousel-next" onclick="changeSlide('project-clinic-management-system', 1)">&#10095;</button>
             </div>
+            
             <h2 class="block-header2 font-a text-center">Clinic Management System</h2>
           </div>
         </div>
@@ -163,6 +262,7 @@
               <button class="carousel-button carousel-prev" onclick="changeSlide('project-portfolio-website', -1)">&#10094;</button>
               <button class="carousel-button carousel-next" onclick="changeSlide('project-portfolio-website', 1)">&#10095;</button>
             </div>
+            
             <h2 class="block-header2 font-a text-center">Portfolio Website</h2>
           </div>
         </div>
@@ -176,6 +276,7 @@
               <button class="carousel-button carousel-prev" onclick="changeSlide('project-attendance-tracker', -1)">&#10094;</button>
               <button class="carousel-button carousel-next" onclick="changeSlide('project-attendance-tracker', 1)">&#10095;</button>
             </div>
+            
             <h2 class="block-header2 font-a text-center">Attendance Tracker</h2>
           </div>
         </div>
